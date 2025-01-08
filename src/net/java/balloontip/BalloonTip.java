@@ -311,7 +311,7 @@ public class BalloonTip extends JPanel {
     public void closeBalloon() {
         forceSetVisible(false);
         setCloseButton(null); // Remove the close button
-        for(MouseListener m : getMouseListeners()) {
+        for (MouseListener m : getMouseListeners()) {
             removeMouseListener(m);
         }
         tearDownHelper();
@@ -324,8 +324,8 @@ public class BalloonTip extends JPanel {
      */
     public void setCloseButton(JButton button) {
         // Remove the current button
-        if (closeButton!=null) {
-            for (ActionListener a: closeButton.getActionListeners()) {
+        if (closeButton != null) {
+            for (ActionListener a : closeButton.getActionListeners()) {
                 closeButton.removeActionListener(a);
             }
             remove(closeButton);

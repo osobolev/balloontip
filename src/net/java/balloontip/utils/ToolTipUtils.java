@@ -73,7 +73,7 @@ public final class ToolTipUtils {
         }
 
         public void mouseMoved(MouseEvent e) {
-            if(balloonTip instanceof CustomBalloonTip) {
+            if (balloonTip instanceof CustomBalloonTip) {
                 // If the mouse is within the balloon tip's attached rectangle
                 if (((CustomBalloonTip) balloonTip).getOffset().contains(e.getPoint())) {
                     if (!balloonTip.isVisible() && !initialTimer.isRunning()) {
@@ -127,14 +127,14 @@ public final class ToolTipUtils {
      */
     public static void toolTipToBalloon(final BalloonTip bT) {
         // Remove tooltip behaviour
-        for (MouseListener m: bT.getAttachedComponent().getMouseListeners()) {
+        for (MouseListener m : bT.getAttachedComponent().getMouseListeners()) {
             if (m instanceof ToolTipController) {
                 bT.getAttachedComponent().removeMouseListener(m);
                 ((ToolTipController) m).stopTimers();
                 break;
             }
         }
-        for (MouseMotionListener m: bT.getAttachedComponent().getMouseMotionListeners()) {
+        for (MouseMotionListener m : bT.getAttachedComponent().getMouseMotionListeners()) {
             if (m instanceof ToolTipController) {
                 bT.getAttachedComponent().removeMouseMotionListener(m);
                 break;
