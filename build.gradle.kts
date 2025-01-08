@@ -24,8 +24,8 @@ version = "1.2.5"
         }
     }
     scm {
-        connection.set("scm:git:https://github.com/osobolev/wincom.git")
-        developerConnection.set("scm:git:https://github.com/osobolev/wincom.git")
-        url.set("https://github.com/osobolev/wincom")
+        connection.set("scm:git:https://github.com/osobolev/balloontip.git")
+        developerConnection.set("scm:git:https://github.com/osobolev/balloontip.git")
+        url.set("https://github.com/osobolev/balloontip")
     }
 }
