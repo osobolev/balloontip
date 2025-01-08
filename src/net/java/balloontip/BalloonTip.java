@@ -821,7 +821,7 @@ public class BalloonTip extends JPanel {
      */
     protected class NestedViewportListener implements ChangeListener {
 
-        private final ArrayList<JViewport> viewports = new ArrayList<JViewport>();
+        private final ArrayList<JViewport> viewports = new ArrayList<>();
 
         public void stateChanged(ChangeEvent e) {
             refreshLocation();
@@ -852,7 +852,7 @@ public class BalloonTip extends JPanel {
      */
     protected class VisibilityControl {
 
-        private final HashMap<String, Boolean> criteria = new HashMap<String, Boolean>(); // A list of criteria determining a balloon tip's visibility
+        private final HashMap<String, Boolean> criteria = new HashMap<>(); // A list of criteria determining a balloon tip's visibility
 
         /**
          * Sets the value of a particular visibility criterion and checks whether the balloon tip should still be visible or not
