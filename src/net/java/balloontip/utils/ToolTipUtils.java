@@ -13,8 +13,6 @@ import net.java.balloontip.BalloonTip;
 import net.java.balloontip.CustomBalloonTip;
 
 import javax.swing.Timer;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -51,18 +49,12 @@ public final class ToolTipUtils {
         ToolTipController(BalloonTip balloonTip, int initialDelay, int showDelay) {
             this.balloonTip = balloonTip;
 
-            showTimer = new Timer(showDelay, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    balloonTip.setVisible(false);
-                }
-            });
+            showTimer = new Timer(showDelay, e -> balloonTip.setVisible(false));
             showTimer.setRepeats(false);
 
-            initialTimer = new Timer(initialDelay, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    balloonTip.setVisible(true);
-                    showTimer.start();
-                }
+            initialTimer = new Timer(initialDelay, e -> {
+                balloonTip.setVisible(true);
+                showTimer.start();
             });
             initialTimer.setRepeats(false);
         }
