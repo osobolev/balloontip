@@ -37,7 +37,7 @@ public class ModernBalloonStyle extends BalloonTipStyle {
     private boolean bottomRight = true;
 
     private int borderThickness = 1;
-    private boolean AAenabled = false;
+    private boolean aaEnabled = false;
 
     private final Color topFillColor;
     private final Color bottomFillColor;
@@ -87,7 +87,7 @@ public class ModernBalloonStyle extends BalloonTipStyle {
      * @param enable    if true, AA is enabled; if false, the settings remain untouched
      */
     public void enableAntiAliasing(boolean enable) {
-        AAenabled = enable;
+        aaEnabled = enable;
     }
 
     public Insets getBorderInsets(Component c) {
@@ -99,7 +99,7 @@ public class ModernBalloonStyle extends BalloonTipStyle {
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
         Graphics2D g2d = (Graphics2D) g;
-        if (AAenabled) {
+        if (aaEnabled) {
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         }
 
