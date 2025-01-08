@@ -45,7 +45,7 @@ public final class FadingUtils {
 
             public void actionPerformed(ActionEvent e) {
                 curTime += timeDelta;
-                float newOpacity = ((float) curTime) / time; // f(time)=curTime/time
+                float newOpacity = (float) curTime / time; // f(time)=curTime/time
                 if (newOpacity >= 0.9999999f || Float.isNaN(newOpacity)) {
                     ((Timer) e.getSource()).stop();
                     /* Because of some weird bug, possibly in AlphaComposite, the balloon tip is shifted 1px when the opacity is 1.0f

@@ -108,7 +108,7 @@ public class TableCellBalloonTip extends CustomBalloonTip {
     }
 
     public void closeBalloon() {
-        JTable table = ((JTable) attachedComponent);
+        JTable table = (JTable) attachedComponent;
         table.getColumnModel().removeColumnModelListener(columnListener);
         super.closeBalloon();
     }
@@ -122,7 +122,7 @@ public class TableCellBalloonTip extends CustomBalloonTip {
         this.row = row;
         this.column = column;
 
-        JTable table = ((JTable) attachedComponent);
+        JTable table = (JTable) attachedComponent;
         table.getColumnModel().addColumnModelListener(columnListener);
     }
 

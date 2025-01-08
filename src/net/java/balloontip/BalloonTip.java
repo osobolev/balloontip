@@ -834,8 +834,8 @@ public class BalloonTip extends JPanel {
 
                 if (tipLocation.y >= view.y - 1 // -1 because we still want to allow balloons that are attached to the very top...
                     && tipLocation.y <= (view.y + view.height)
-                    && (tipLocation.x) >= view.x
-                    && (tipLocation.x) <= (view.x + view.width)) {
+                    && tipLocation.x >= view.x
+                    && tipLocation.x <= (view.x + view.width)) {
                     isWithinViewport = true;
                 } else {
                     isWithinViewport = false;

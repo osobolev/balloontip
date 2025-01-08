@@ -83,7 +83,7 @@ public class ListItemBalloonTip extends CustomBalloonTip {
     }
 
     public void closeBalloon() {
-        JList<?> list = ((JList<?>) attachedComponent);
+        JList<?> list = (JList<?>) attachedComponent;
         list.getModel().removeListDataListener(dataListener);
         super.closeBalloon();
     }
@@ -94,7 +94,7 @@ public class ListItemBalloonTip extends CustomBalloonTip {
      */
     private void setup(int index) {
         this.index = index;
-        JList<?> list = ((JList<?>) attachedComponent);
+        JList<?> list = (JList<?>) attachedComponent;
         list.getModel().addListDataListener(dataListener);
     }
 

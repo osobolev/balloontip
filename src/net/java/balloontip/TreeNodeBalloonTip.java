@@ -138,7 +138,7 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
      * @return            the tree
      */
     private JTree getTree() {
-        return ((JTree) attachedComponent);
+        return (JTree) attachedComponent;
     }
 
     private static final long serialVersionUID = -7270789090236631717L;

@@ -52,7 +52,7 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
         Graphics2D g2d = (Graphics2D) g;
-        width -= (depth + 1);
+        width -= depth + 1;
         height -= 1;
 
         int yTop;        // Y-coordinate of the top side of the balloon
