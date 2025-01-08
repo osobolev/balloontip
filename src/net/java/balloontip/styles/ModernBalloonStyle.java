@@ -93,9 +93,9 @@ public class ModernBalloonStyle extends BalloonTipStyle {
 
     public Insets getBorderInsets(Component c) {
         if (flipY) {
-            return new Insets(verticalOffset+arcHeight, arcWidth, arcHeight, arcWidth);
+            return new Insets(verticalOffset + arcHeight, arcWidth, arcHeight, arcWidth);
         }
-        return new Insets(arcHeight, arcWidth, arcHeight+verticalOffset, arcWidth);
+        return new Insets(arcHeight, arcWidth, arcHeight + verticalOffset, arcWidth);
     }
 
     public boolean isBorderOpaque() {
@@ -110,10 +110,10 @@ public class ModernBalloonStyle extends BalloonTipStyle {
         }
 
         // Make room for the border line
-        x+=borderThickness - 1;
-        y+=borderThickness - 1;
-        width-=borderThickness*2;
-        height-=borderThickness*2;
+        x += borderThickness - 1;
+        y += borderThickness - 1;
+        width -= borderThickness * 2;
+        height -= borderThickness * 2;
 
         int yTop;        // Y-coordinate of the top side of the balloon
         int yBottom;    // Y-coordinate of the bottom side of the balloon
@@ -186,7 +186,7 @@ public class ModernBalloonStyle extends BalloonTipStyle {
         outline.closePath();
 
         // Now paint the sucker :)
-        g2d.setPaint(new GradientPaint(0, yTop,topFillColor, 0, yBottom, bottomFillColor));
+        g2d.setPaint(new GradientPaint(0, yTop, topFillColor, 0, yBottom, bottomFillColor));
         g2d.fill(outline);
         g2d.setPaint(borderColor);
         Stroke backup = g2d.getStroke();

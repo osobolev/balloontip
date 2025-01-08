@@ -36,8 +36,8 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
 
     protected float attachLocationX = 0.0f;            // A percentage that determines the X-location of the tip on the attached object
     protected float attachLocationY = 0.0f;            // A percentage that determines the Y-location of the tip on the attached object
-                                                    // For example, if attachLocationX and Y are both 0.5, then the tip is centered on the attached object
-    
+                                                       // For example, if attachLocationX and Y are both 0.5, then the tip is centered on the attached object
+
     /**
      * Constructor
      * @param hO    preferred horizontal offset (in pixels)
@@ -196,15 +196,15 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
             if (hOffset < minimumHorizontalOffset) {
                 hOffset = minimumHorizontalOffset;
                 if (flipX) {
-                    x += -overflow +  (balloonWidth - preferredHorizontalOffset) - minimumHorizontalOffset;
-                }else {
-                    x += -overflow +  preferredHorizontalOffset - minimumHorizontalOffset;
+                    x += -overflow + (balloonWidth - preferredHorizontalOffset) - minimumHorizontalOffset;
+                } else {
+                    x += -overflow + preferredHorizontalOffset - minimumHorizontalOffset;
                 }
             }
         }
 
         // Check collision with the right side of the window
-        overflow = (x+balloonWidth) - balloonTip.getTopLevelContainer().getWidth();
+        overflow = (x + balloonWidth) - balloonTip.getTopLevelContainer().getWidth();
         if (overflow > 0) {
             x -= overflow;
             hOffset += overflow;
@@ -214,8 +214,8 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
                 hOffset = balloonWidth - minimumHorizontalOffset;
                 if (flipX) {
                     x += overflow + preferredHorizontalOffset + minimumHorizontalOffset;
-                }else {
-                    x += overflow -  (balloonWidth - preferredHorizontalOffset) + minimumHorizontalOffset;
+                } else {
+                    x += overflow - (balloonWidth - preferredHorizontalOffset) + minimumHorizontalOffset;
                 }
             }
         }

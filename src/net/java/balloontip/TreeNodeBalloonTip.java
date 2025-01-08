@@ -107,7 +107,7 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
     public void setTreePath(TreePath path) {
         this.path = path;
         Rectangle bounds = getTree().getPathBounds(path);
-        if (bounds!=null) { // Might be null if the path is currently invisible..
+        if (bounds != null) { // Might be null if the path is currently invisible..
             setOffset(bounds);
         }
     }
@@ -139,7 +139,7 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
      * @return            the tree
      */
     private JTree getTree() {
-        return ((JTree)attachedComponent);
+        return ((JTree) attachedComponent);
     }
 
     private static final long serialVersionUID = -7270789090236631717L;

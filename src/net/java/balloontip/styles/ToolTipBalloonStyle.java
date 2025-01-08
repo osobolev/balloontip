@@ -40,7 +40,7 @@ public class ToolTipBalloonStyle extends BalloonTipStyle {
         if (flipY) {
             return new Insets(verticalOffset + 1, 1, 1, 1);
         }
-        return new Insets(1, 1, verticalOffset + 1 , 1);
+        return new Insets(1, 1, verticalOffset + 1, 1);
     }
 
     public boolean isBorderOpaque() {
@@ -49,8 +49,8 @@ public class ToolTipBalloonStyle extends BalloonTipStyle {
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
         Graphics2D g2d = (Graphics2D) g;
-        width-=1;
-        height-=1;
+        width -= 1;
+        height -= 1;
 
         int yTop;        // Y-coordinate of the top side of the balloon
         int yBottom;    // Y-coordinate of the bottom side of the balloon

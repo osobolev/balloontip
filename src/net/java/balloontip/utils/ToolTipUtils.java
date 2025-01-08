@@ -75,7 +75,7 @@ public final class ToolTipUtils {
         public void mouseMoved(MouseEvent e) {
             if(balloonTip instanceof CustomBalloonTip) {
                 // If the mouse is within the balloon tip's attached rectangle
-                if (((CustomBalloonTip)balloonTip).getOffset().contains(e.getPoint())) {
+                if (((CustomBalloonTip) balloonTip).getOffset().contains(e.getPoint())) {
                     if (!balloonTip.isVisible() && !initialTimer.isRunning()) {
                         initialTimer.start();
                     }

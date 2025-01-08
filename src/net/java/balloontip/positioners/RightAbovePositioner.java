@@ -53,7 +53,7 @@ public class RightAbovePositioner extends BasicBalloonTipPositioner {
                 flipX = false;
                 hOffset = balloonWidth - hOffset;
                 if (fixedAttachLocation) {
-                    x += (balloonWidth - 2*hOffset);
+                    x += (balloonWidth - 2 * hOffset);
                 } else {
                     x = attached.x;
                 }

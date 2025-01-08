@@ -102,12 +102,12 @@ public class BalloonTip extends JPanel {
         }
 
         public void componentShown(ComponentEvent e) {
-            visibilityControl.setCriterionAndUpdate("attachedComponentShowing",isAttachedComponentShowing());
+            visibilityControl.setCriterionAndUpdate("attachedComponentShowing", isAttachedComponentShowing());
             refreshLocation();
         }
 
         public void componentHidden(ComponentEvent e) {
-            visibilityControl.setCriterionAndUpdate("attachedComponentShowing",false);
+            visibilityControl.setCriterionAndUpdate("attachedComponentShowing", false);
         }
     };
 
@@ -137,7 +137,7 @@ public class BalloonTip extends JPanel {
      * @param text                    the contents of the balloon tip (may contain HTML)
      */
     public BalloonTip(JComponent attachedComponent, String text) {
-        this(attachedComponent, text, new RoundedBalloonStyle(5,5,Color.WHITE, Color.BLACK), true);
+        this(attachedComponent, text, new RoundedBalloonStyle(5, 5, Color.WHITE, Color.BLACK), true);
     }
 
     /**
@@ -202,12 +202,12 @@ public class BalloonTip extends JPanel {
      */
     public void setContents(JComponent contents) {
         JComponent oldContents = this.contents;
-        if (oldContents!=null) {
+        if (oldContents != null) {
             remove(this.contents);
         }
-        this.contents=contents;
+        this.contents = contents;
 
-        if (contents!=null) {
+        if (contents != null) {
             setPadding(getPadding());
             add(this.contents, new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
             visibilityControl.setCriterionAndUpdate("hasContents", true);
@@ -243,7 +243,7 @@ public class BalloonTip extends JPanel {
      * @param padding    the amount of padding in pixels
      */
     public void setPadding(int padding) {
-        this.padding=padding;
+        this.padding = padding;
         contents.setBorder(BorderFactory.createEmptyBorder(padding, padding, padding, padding));
         refreshLocation();
     }
@@ -333,7 +333,7 @@ public class BalloonTip extends JPanel {
         }
 
         // Set the new button
-        if (button!=null) {
+        if (button != null) {
             closeButton = button;
             add(closeButton, new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.NORTHEAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
         }
@@ -348,7 +348,7 @@ public class BalloonTip extends JPanel {
      *                             if false, the button's behaviour is to hide the balloon tip by calling setVisible(false)
      */
     public void setCloseButton(JButton button, boolean permanentClose) {
-        if (button!=null) {
+        if (button != null) {
             if (permanentClose) {
                 button.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -497,7 +497,7 @@ public class BalloonTip extends JPanel {
      * (Is able to update balloon tip's location even if the balloon tip is not shown.)
      */
     public void refreshLocation() {
-        if (topLevelContainer!=null) {
+        if (topLevelContainer != null) {
             positioner.determineAndSetLocation(getAttachedRectangle());
         }
     }
@@ -521,7 +521,7 @@ public class BalloonTip extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
-        if (opacity!=1.0f) {
+        if (opacity != 1.0f) {
             ((Graphics2D) g).setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
         }
         super.paintComponent(g);
@@ -565,7 +565,7 @@ public class BalloonTip extends JPanel {
      * Fire a state change event to the viewportlistener (if any)
      */
     protected void notifyViewportListener() {
-        if (viewportListener!=null) {
+        if (viewportListener != null) {
             viewportListener.stateChanged(null);
         }
     }
@@ -659,7 +659,7 @@ public class BalloonTip extends JPanel {
         setPadding(4);
 
         add(this.contents, new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
-        setCloseButton(closeButton,true);
+        setCloseButton(closeButton, true);
 
         // Don't allow to click 'through' the balloon tip
         clickListener = new MouseAdapter() {
@@ -702,12 +702,12 @@ public class BalloonTip extends JPanel {
         // If the attached component is moved/hidden/shown, the balloon tip should act accordingly
         attachedComponent.addComponentListener(componentListener);
         // Update balloon tip's visibility
-        visibilityControl.setCriterionAndUpdate("attachedComponentShowing",isAttachedComponentShowing());
+        visibilityControl.setCriterionAndUpdate("attachedComponentShowing", isAttachedComponentShowing());
 
         // Follow the path of parent components to see if there are any we should listen to
         Container current = attachedComponent.getParent();
         Container previous = attachedComponent;
-        while (current!=null) {
+        while (current != null) {
             if (current instanceof JTabbedPane || current.getLayout() instanceof CardLayout) {
                 /* Switching tabs only tells the JPanel representing the contents of each tab whether it went invisible or not.
                  * It doesn't propagate such events to each and every component within each tab.
@@ -750,18 +750,18 @@ public class BalloonTip extends JPanel {
      */
     private void tearDownHelper() {
         // In case you're trying to close a balloon tip before it's fully constructed
-        if(ancestorListener!=null) {
+        if (ancestorListener != null) {
             attachedComponent.removeAncestorListener(ancestorListener);
             ancestorListener = null;
         }
-        
+
         attachedComponent.removeComponentListener(componentListener);
 
         // Remove any listeners that were attached to parent components
-        if (tabbedPaneListener!=null) {
+        if (tabbedPaneListener != null) {
             Container current = attachedComponent.getParent();
             Container previous = attachedComponent;
-            while (current!=null) {
+            while (current != null) {
                 if (current instanceof JTabbedPane || current.getLayout() instanceof CardLayout) {
                     previous.removeComponentListener(tabbedPaneListener);
                 } else if (current instanceof BalloonTip) {
@@ -780,7 +780,7 @@ public class BalloonTip extends JPanel {
             topLevelContainer = null;
         }
 
-        if (viewportListener!=null) {
+        if (viewportListener != null) {
             for (JViewport viewport : viewportListener.viewports) {
                 viewport.removeChangeListener(viewportListener);
             }
@@ -799,16 +799,16 @@ public class BalloonTip extends JPanel {
     private ComponentAdapter getTabbedPaneListener() {
         return new ComponentAdapter() {
             public void componentShown(ComponentEvent e) {
-                visibilityControl.setCriterionAndUpdate("tabShowing",true);
+                visibilityControl.setCriterionAndUpdate("tabShowing", true);
                 /* We must also recheck whether the attached component is visible!
                  * While this tab *was* invisible, the component might've been resized, hidden, shown, ... ,
                  * but no events were fired because the tab was hidden! */
-                visibilityControl.setCriterionAndUpdate("attachedComponentShowing",isAttachedComponentShowing());
+                visibilityControl.setCriterionAndUpdate("attachedComponentShowing", isAttachedComponentShowing());
                 refreshLocation();
             }
 
             public void componentHidden(ComponentEvent e) {
-                visibilityControl.setCriterionAndUpdate("tabShowing",false);
+                visibilityControl.setCriterionAndUpdate("tabShowing", false);
             }
         };
     }

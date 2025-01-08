@@ -53,7 +53,7 @@ public class LeftBelowPositioner extends BasicBalloonTipPositioner {
             if (x < 0) {
                 flipX = true;
                 if (fixedAttachLocation) {
-                    x -= balloonWidth - 2*hOffset;
+                    x -= balloonWidth - 2 * hOffset;
                 } else {
                     x = attached.x + attached.width - balloonWidth;
                 }

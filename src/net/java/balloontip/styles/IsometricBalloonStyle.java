@@ -42,9 +42,9 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
 
     public Insets getBorderInsets(Component c) {
         if (flipY) {
-            return new Insets(verticalOffset+depth+1, 1, 1, depth+1);
+            return new Insets(verticalOffset + depth + 1, 1, 1, depth + 1);
         }
-        return new Insets(depth+1, 1, verticalOffset+1, depth+1);
+        return new Insets(depth + 1, 1, verticalOffset + 1, depth + 1);
     }
 
     public boolean isBorderOpaque() {
@@ -53,8 +53,8 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
         Graphics2D g2d = (Graphics2D) g;
-        width-=(depth+1);
-        height-=1;
+        width -= (depth + 1);
+        height -= 1;
 
         int yTop;        // Y-coordinate of the top side of the balloon
         int yBottom;    // Y-coordinate of the bottom side of the balloon
@@ -70,8 +70,8 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         GeneralPath top = new GeneralPath();
         top.moveTo(x, yTop);
         top.lineTo(width, yTop);
-        top.lineTo(width+depth, yTop-depth);
-        top.lineTo(x+depth, yTop-depth);
+        top.lineTo(width + depth, yTop - depth);
+        top.lineTo(x + depth, yTop - depth);
         top.closePath();
         g2d.setPaint(sideColor);
         g2d.fill(top);
@@ -79,8 +79,8 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         // Draw the side of the balloon
         GeneralPath side = new GeneralPath();
         side.moveTo(width, yTop);
-        side.lineTo(width+depth, yTop-depth);
-        side.lineTo(width+depth, yBottom-depth);
+        side.lineTo(width + depth, yTop - depth);
+        side.lineTo(width + depth, yBottom - depth);
         side.lineTo(width, yBottom);
         side.closePath();
         g2d.setPaint(sideColor.darker());
@@ -89,28 +89,28 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         // Draw the tip's side
         if (flipX && !flipY) {
             GeneralPath tipSide = new GeneralPath();
-            tipSide.moveTo(x+width-horizontalOffset, yBottom);
-            tipSide.lineTo(x+width-horizontalOffset+depth, yBottom);
-            tipSide.lineTo(x+width-horizontalOffset+depth, yBottom+verticalOffset-depth);
-            tipSide.lineTo(x+width-horizontalOffset, yBottom+verticalOffset);
+            tipSide.moveTo(x + width - horizontalOffset, yBottom);
+            tipSide.lineTo(x + width - horizontalOffset + depth, yBottom);
+            tipSide.lineTo(x + width - horizontalOffset + depth, yBottom + verticalOffset - depth);
+            tipSide.lineTo(x + width - horizontalOffset, yBottom + verticalOffset);
             tipSide.closePath();
             g2d.setPaint(sideColor.darker());
             g2d.fill(tipSide);
         } else if (!flipX && flipY) {
             GeneralPath tipSide = new GeneralPath();
-            tipSide.moveTo(x+horizontalOffset, yTop-verticalOffset);
-            tipSide.lineTo(x+horizontalOffset+depth, yTop-verticalOffset-depth);
-            tipSide.lineTo(x+horizontalOffset+verticalOffset+depth, yTop-depth);
-            tipSide.lineTo(x+horizontalOffset+verticalOffset, yTop);
+            tipSide.moveTo(x + horizontalOffset, yTop - verticalOffset);
+            tipSide.lineTo(x + horizontalOffset + depth, yTop - verticalOffset - depth);
+            tipSide.lineTo(x + horizontalOffset + verticalOffset + depth, yTop - depth);
+            tipSide.lineTo(x + horizontalOffset + verticalOffset, yTop);
             tipSide.closePath();
             g2d.setPaint(sideColor.darker());
             g2d.fill(tipSide);
         } else if (flipX && flipY) {
             GeneralPath tipSide = new GeneralPath();
-            tipSide.moveTo(x+width-horizontalOffset, yTop);
-            tipSide.lineTo(x+width-horizontalOffset+depth, yTop-depth);
-            tipSide.lineTo(x+width-horizontalOffset+depth, yTop-depth-verticalOffset);
-            tipSide.lineTo(x+width-horizontalOffset, yTop-verticalOffset);
+            tipSide.moveTo(x + width - horizontalOffset, yTop);
+            tipSide.lineTo(x + width - horizontalOffset + depth, yTop - depth);
+            tipSide.lineTo(x + width - horizontalOffset + depth, yTop - depth - verticalOffset);
+            tipSide.lineTo(x + width - horizontalOffset, yTop - verticalOffset);
             tipSide.closePath();
             g2d.setPaint(sideColor.darker());
             g2d.fill(tipSide);

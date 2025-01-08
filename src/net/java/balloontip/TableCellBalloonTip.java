@@ -33,7 +33,7 @@ public class TableCellBalloonTip extends CustomBalloonTip {
     private final TableColumnModelListener columnListener = new TableColumnModelListener()  {
         public void columnAdded(TableColumnModelEvent e) {
             if (e.getToIndex() <= column) {
-                setCellPosition(row, column+1);
+                setCellPosition(row, column + 1);
             } else {
                 setCellPosition(row, column);
             }
@@ -60,7 +60,7 @@ public class TableCellBalloonTip extends CustomBalloonTip {
             if (e.getFromIndex() == column) {
                 closeBalloon();
             } else if (e.getFromIndex() < column) {
-                setCellPosition(row, column-1);
+                setCellPosition(row, column - 1);
             } else {
                 setCellPosition(row, column);
             }
@@ -100,11 +100,11 @@ public class TableCellBalloonTip extends CustomBalloonTip {
     public void setCellPosition(int row, int column) {
         this.row = row;
         this.column = column;
-        setOffset(((JTable)attachedComponent).getCellRect(row, column, true));
+        setOffset(((JTable) attachedComponent).getCellRect(row, column, true));
     }
 
     public void closeBalloon() {
-        JTable table=((JTable)attachedComponent);
+        JTable table = ((JTable) attachedComponent);
         table.getColumnModel().removeColumnModelListener(columnListener);
         super.closeBalloon();
     }
@@ -118,7 +118,7 @@ public class TableCellBalloonTip extends CustomBalloonTip {
         this.row = row;
         this.column = column;
 
-        JTable table=((JTable)attachedComponent);
+        JTable table = ((JTable) attachedComponent);
         table.getColumnModel().addColumnModelListener(columnListener);
     }
 

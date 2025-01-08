@@ -31,7 +31,7 @@ public class ListItemBalloonTip extends CustomBalloonTip {
         public void intervalAdded(ListDataEvent e) {
             // If the balloon tip needs to move down
             if (e.getIndex1() <= index) {
-                index+=e.getIndex1()-e.getIndex0()+1;
+                index += e.getIndex1() - e.getIndex0() + 1;
             }
             setItemPosition(index);
         }
@@ -39,7 +39,7 @@ public class ListItemBalloonTip extends CustomBalloonTip {
         public void intervalRemoved(ListDataEvent e) {
             // If the balloon tip needs to move up
             if (e.getIndex1() < index) {
-                index-=e.getIndex1()-e.getIndex0()+1;
+                index -= e.getIndex1() - e.getIndex0() + 1;
                 setItemPosition(index);
             // If the item with the balloon tip is removed
             } else if (index >= e.getIndex0() && index <= e.getIndex1()) {
@@ -79,11 +79,11 @@ public class ListItemBalloonTip extends CustomBalloonTip {
      * @param index        index of the list item
      */
     public void setItemPosition(int index) {
-        setOffset(((JList<?>)attachedComponent).getCellBounds(index, index));
+        setOffset(((JList<?>) attachedComponent).getCellBounds(index, index));
     }
 
     public void closeBalloon() {
-        JList<?> list=((JList<?>)attachedComponent);
+        JList<?> list = ((JList<?>) attachedComponent);
         list.getModel().removeListDataListener(dataListener);
         super.closeBalloon();
     }
@@ -94,7 +94,7 @@ public class ListItemBalloonTip extends CustomBalloonTip {
      */
     private void setup(int index) {
         this.index = index;
-        JList<?> list=((JList<?>)attachedComponent);
+        JList<?> list = ((JList<?>) attachedComponent);
         list.getModel().addListDataListener(dataListener);
     }
 

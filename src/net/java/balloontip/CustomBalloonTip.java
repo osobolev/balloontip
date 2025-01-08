@@ -49,7 +49,7 @@ public class CustomBalloonTip extends BalloonTip {
      */
     public CustomBalloonTip(JComponent attachedComponent, JComponent component, Rectangle offset, BalloonTipStyle style, BalloonTipPositioner positioner, JButton closeButton) {
         super();
-        this.offset=offset;
+        this.offset = offset;
         setup(attachedComponent, component, style, positioner, closeButton);
     }
 

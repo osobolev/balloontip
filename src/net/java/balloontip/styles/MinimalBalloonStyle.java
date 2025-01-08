@@ -39,9 +39,9 @@ public class MinimalBalloonStyle extends BalloonTipStyle {
 
     public Insets getBorderInsets(Component c) {
         if (flipY) {
-            return new Insets(verticalOffset+arcWidth, arcWidth, arcWidth, arcWidth);
+            return new Insets(verticalOffset + arcWidth, arcWidth, arcWidth, arcWidth);
         }
-        return new Insets(arcWidth, arcWidth, arcWidth+verticalOffset, arcWidth);
+        return new Insets(arcWidth, arcWidth, arcWidth + verticalOffset, arcWidth);
     }
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
@@ -114,6 +114,6 @@ public class MinimalBalloonStyle extends BalloonTipStyle {
     }
 
     public boolean isBorderOpaque() {
-        return fillColor.getAlpha()==255;
+        return fillColor.getAlpha() == 255;
     }
 }

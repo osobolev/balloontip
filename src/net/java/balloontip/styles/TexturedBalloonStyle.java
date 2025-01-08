@@ -47,15 +47,15 @@ public class TexturedBalloonStyle extends BalloonTipStyle {
         this.arcWidth = arcWidth;
         this.arcHeight = arcHeight;
         this.bg = javax.imageio.ImageIO.read(background);
-        bgBounds = new Rectangle(0,0, bg.getWidth(), bg.getHeight());
+        bgBounds = new Rectangle(0, 0, bg.getWidth(), bg.getHeight());
         this.borderColor = borderColor;
     }
 
     public Insets getBorderInsets(Component c) {
         if (flipY) {
-            return new Insets(verticalOffset+arcHeight, arcWidth, arcHeight, arcWidth);
+            return new Insets(verticalOffset + arcHeight, arcWidth, arcHeight, arcWidth);
         }
-        return new Insets(arcHeight, arcWidth, arcHeight+verticalOffset, arcWidth);
+        return new Insets(arcHeight, arcWidth, arcHeight + verticalOffset, arcWidth);
     }
 
     public boolean isBorderOpaque() {
@@ -64,8 +64,8 @@ public class TexturedBalloonStyle extends BalloonTipStyle {
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
         Graphics2D g2d = (Graphics2D) g;
-        width-=1;
-        height-=1;
+        width -= 1;
+        height -= 1;
 
         int yTop;        // Y-coordinate of the top side of the balloon
         int yBottom;    // Y-coordinate of the bottom side of the balloon
