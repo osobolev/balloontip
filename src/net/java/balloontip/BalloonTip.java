@@ -469,7 +469,7 @@ public class BalloonTip extends JPanel {
 
         this.topLevelContainer = tlc;
         // We use the popup layer of the top level container (frame or dialog) to show the balloon tip
-        topLevelContainer.setLayer(this, JLayeredPane.POPUP_LAYER);
+        topLevelContainer.setLayer(this, JLayeredPane.POPUP_LAYER.intValue());
         // If the window is resized, we should check if the balloon still fits
         topLevelContainer.addComponentListener(topLevelContainerListener);
         // Add the balloon tip to the top-level container (This must be the last step; see BALLOONTIP-10!)
@@ -873,7 +873,7 @@ public class BalloonTip extends JPanel {
         public void update() {
             Iterator<Boolean> i = criteria.values().iterator();
             while (i.hasNext()) {
-                if (!i.next()) {
+                if (!i.next().booleanValue()) {
                     forceSetVisible(false);
                     return;
                 }
