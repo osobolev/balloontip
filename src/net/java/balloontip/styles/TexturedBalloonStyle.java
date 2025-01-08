@@ -103,7 +103,7 @@ public class TexturedBalloonStyle extends BalloonTipStyle {
         if (!flipX && flipY) {
             outline.lineTo(x + horizontalOffset + verticalOffset, yTop);
             outline.lineTo(x + horizontalOffset, yTop - verticalOffset);
-            outline.lineTo(x + horizontalOffset, yTop);    
+            outline.lineTo(x + horizontalOffset, yTop);
         } else if (flipX && flipY) {
             outline.lineTo(x + width - horizontalOffset, yTop);
             outline.lineTo(x + width - horizontalOffset, yTop - verticalOffset);

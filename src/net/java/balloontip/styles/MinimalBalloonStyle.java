@@ -96,7 +96,7 @@ public class MinimalBalloonStyle extends BalloonTipStyle {
         if (!flipX && flipY) {
             outline.lineTo(x + horizontalOffset + verticalOffset, yTop);
             outline.lineTo(x + horizontalOffset, yTop - verticalOffset);
-            outline.lineTo(x + horizontalOffset - verticalOffset, yTop);    
+            outline.lineTo(x + horizontalOffset - verticalOffset, yTop);
         } else if (flipX && flipY) {
             outline.lineTo(x + width - horizontalOffset + verticalOffset, yTop);
             outline.lineTo(x + width - horizontalOffset, yTop - verticalOffset);

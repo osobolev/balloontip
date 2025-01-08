@@ -137,7 +137,7 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         if (!flipX && flipY) {
             front.lineTo(x + horizontalOffset + verticalOffset, yTop);
             front.lineTo(x + horizontalOffset, yTop - verticalOffset);
-            front.lineTo(x + horizontalOffset, yTop);    
+            front.lineTo(x + horizontalOffset, yTop);
         } else if (flipX && flipY) {
             front.lineTo(x + width - horizontalOffset, yTop);
             front.lineTo(x + width - horizontalOffset, yTop - verticalOffset);
