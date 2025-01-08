@@ -30,7 +30,7 @@ public class TableCellBalloonTip extends CustomBalloonTip {
     protected int column;
 
     // Adjust the balloon tip's position when the table's columns are modified
-    private final TableColumnModelListener columnListener = new TableColumnModelListener()  {
+    private final TableColumnModelListener columnListener = new TableColumnModelListener() {
         public void columnAdded(TableColumnModelEvent e) {
             if (e.getToIndex() <= column) {
                 setCellPosition(row, column + 1);

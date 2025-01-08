@@ -39,10 +39,11 @@ public final class FadingUtils {
         balloon.setOpacity(0.0f);
         balloon.setVisible(true);
 
-        final int timeDelta = 1000/refreshRate;
+        final int timeDelta = 1000 / refreshRate;
         // Trigger this timer at the desired refresh rate and stop it once full opacity is reached.
-        final Timer timer = new Timer(timeDelta, new ActionListener () {
-            int curTime=0;
+        final Timer timer = new Timer(timeDelta, new ActionListener() {
+            int curTime = 0;
+
             public void actionPerformed(ActionEvent e) {
                 curTime += timeDelta;
                 float newOpacity = ((float) curTime) / time; // f(time)=curTime/time
@@ -74,9 +75,10 @@ public final class FadingUtils {
         balloon.setOpacity(0.9999999f);
         balloon.setVisible(true);
 
-        final int timeDelta = 1000/refreshRate;
-        final Timer timer = new Timer(timeDelta, new ActionListener () {
-            int curTime=0;
+        final int timeDelta = 1000 / refreshRate;
+        final Timer timer = new Timer(timeDelta, new ActionListener() {
+            int curTime = 0;
+
             public void actionPerformed(ActionEvent e) {
                 curTime += timeDelta;
                 float newOpacity = (-1.0f / time) * curTime + 1.0f; // f(time)=(-1/time)*curTime+1

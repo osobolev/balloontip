@@ -35,7 +35,7 @@ public final class TimingUtils {
      * @param time                show the balloon for this amount of milliseconds
      */
     public static void showTimedBalloon(final BalloonTip balloon, int time) {
-        showTimedBalloon(balloon, time,new ActionListener() {
+        showTimedBalloon(balloon, time, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 balloon.closeBalloon();
             }
