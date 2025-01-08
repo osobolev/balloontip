@@ -351,17 +351,9 @@ public class BalloonTip extends JPanel {
     public void setCloseButton(JButton button, boolean permanentClose) {
         if (button != null) {
             if (permanentClose) {
-                button.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        closeBalloon();
-                    }
-                });
+                button.addActionListener(e -> closeBalloon());
             } else {
-                button.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        setVisible(false);
-                    }
-                });
+                button.addActionListener(e -> setVisible(false));
             }
         }
         setCloseButton(button);
