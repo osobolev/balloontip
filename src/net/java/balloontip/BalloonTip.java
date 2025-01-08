@@ -52,9 +52,9 @@ import java.awt.event.ComponentListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Vector;
 
 /**
  * A balloon tip Swing component that is attached to a JComponent and uses another JComponent as contents
@@ -822,7 +822,7 @@ public class BalloonTip extends JPanel {
      */
     protected class NestedViewportListener implements ChangeListener {
 
-        private final Vector<JViewport> viewports = new Vector<JViewport>();
+        private final ArrayList<JViewport> viewports = new ArrayList<JViewport>();
 
         public void stateChanged(ChangeEvent e) {
             refreshLocation();
