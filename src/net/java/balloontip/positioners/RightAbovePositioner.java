@@ -29,8 +29,8 @@ public class RightAbovePositioner extends BasicBalloonTipPositioner {
 		
 		hOffset = balloonWidth - preferredHorizontalOffset;
 		if (fixedAttachLocation) {
-			x = new Float(attached.x + attached.width * attachLocationX).intValue() - hOffset;
-			y = new Float(attached.y + attached.height * attachLocationY).intValue() - balloonHeight;
+			x = (int) (attached.x + attached.width * attachLocationX) - hOffset;
+			y = (int) (attached.y + attached.height * attachLocationY) - balloonHeight;
 		} else {
 			x = attached.x + attached.width - balloonWidth;
 			y = attached.y - balloonHeight;

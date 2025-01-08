@@ -134,9 +134,9 @@ public class CenteredPositioner extends BalloonTipPositioner {
 		int hOffset = balloonWidth / 2;
 		float attachLocationX = 0.5f;
 		
-		x = new Float(attached.x + attached.width * attachLocationX).intValue() - hOffset;
+		x = (int) (attached.x + attached.width * attachLocationX) - hOffset;
 		if (fixedAttachLocation) {
-			y = new Float(attached.y + attached.height * attachLocationY).intValue() - balloonHeight;
+			y = (int) (attached.y + attached.height * attachLocationY) - balloonHeight;
 		} else {
 			y = attached.y - balloonHeight;
 		}
