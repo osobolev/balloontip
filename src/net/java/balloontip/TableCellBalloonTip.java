@@ -43,8 +43,8 @@ public class TableCellBalloonTip extends CustomBalloonTip {
             if (column == e.getFromIndex()) {
                 // If the column with the balloon tip is being moved
                 setCellPosition(row, e.getToIndex());
-            } else if ((e.getFromIndex() > column && e.getToIndex() > column) ||
-                       (e.getFromIndex() < column && e.getToIndex() < column)) {
+            } else if ((e.getFromIndex() > column && e.getToIndex() > column)
+                       || (e.getFromIndex() < column && e.getToIndex() < column)) {
                 // If both source and target columns are before/after the column with the balloon tip
                 setCellPosition(row, column);
             } else if (e.getFromIndex() < column && e.getToIndex() >= column) {

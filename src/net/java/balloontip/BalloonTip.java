@@ -557,8 +557,8 @@ public class BalloonTip extends JPanel {
      */
     protected boolean isAttachedComponentShowing() {
         return attachedComponent.isShowing()
-        && attachedComponent.getWidth() > 0
-        && attachedComponent.getHeight() > 0; // The area of the attached component must be > 0 in order to be visible..
+               && attachedComponent.getWidth() > 0
+               && attachedComponent.getHeight() > 0; // The area of the attached component must be > 0 in order to be visible..
     }
 
     /*
