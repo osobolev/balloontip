@@ -46,10 +46,6 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         return new Insets(depth + 1, 1, verticalOffset + 1, depth + 1);
     }
 
-    public boolean isBorderOpaque() {
-        return true;
-    }
-
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
         Graphics2D g2d = (Graphics2D) g;
         width -= depth + 1;
