@@ -43,7 +43,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
      * @param hO    preferred horizontal offset (in pixels)
      * @param vO    preferred vertical offset (in pixels)
      */
-    public BasicBalloonTipPositioner(int hO, int vO) {
+    protected BasicBalloonTipPositioner(int hO, int vO) {
         preferredHorizontalOffset = hO;
         preferredVerticalOffset = vO;
     }
