@@ -82,9 +82,9 @@ public class BalloonTip extends JPanel {
     protected JLayeredPane topLevelContainer = null;    // The balloon tip is drawn on this pane
     protected JComponent attachedComponent;                // The balloon tip is attached to this component
 
-    private static Icon defaultCloseIcon  = new ImageIcon(BalloonTip.class.getResource("/net/java/balloontip/images/close_default.png"));
+    private static Icon defaultCloseIcon = new ImageIcon(BalloonTip.class.getResource("/net/java/balloontip/images/close_default.png"));
     private static Icon rolloverCloseIcon = new ImageIcon(BalloonTip.class.getResource("/net/java/balloontip/images/close_rollover.png"));
-    private static Icon pressedCloseIcon  = new ImageIcon(BalloonTip.class.getResource("/net/java/balloontip/images/close_pressed.png"));
+    private static Icon pressedCloseIcon = new ImageIcon(BalloonTip.class.getResource("/net/java/balloontip/images/close_pressed.png"));
 
     // Only show a balloon tip when the component it's attached to is visible
     private final ComponentListener componentListener = new ComponentListener() {
@@ -396,9 +396,9 @@ public class BalloonTip extends JPanel {
      * @param rollover        icon when hovering over the button
      */
     public static void setDefaultCloseButtonIcons(Icon normal, Icon pressed, Icon rollover) {
-        defaultCloseIcon  = normal;
+        defaultCloseIcon = normal;
         rolloverCloseIcon = rollover;
-        pressedCloseIcon  = pressed;
+        pressedCloseIcon = pressed;
     }
 
     /**
