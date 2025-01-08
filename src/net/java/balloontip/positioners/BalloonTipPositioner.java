@@ -31,12 +31,6 @@ public abstract class BalloonTipPositioner {
     };
 
     /**
-     * Default constructor
-     */
-    public BalloonTipPositioner() {
-    }
-
-    /**
      * Retrieve the balloon tip that uses this positioner
      * @return The balloon tip that uses this positioner
      */
