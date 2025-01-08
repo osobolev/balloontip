@@ -54,7 +54,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * A balloon tip Swing component that is attached to a JComponent and uses another JComponent as contents
@@ -871,9 +870,8 @@ public class BalloonTip extends JPanel {
          * Only if all criteria are true, the balloon tip can be visible.
          */
         public void update() {
-            Iterator<Boolean> i = criteria.values().iterator();
-            while (i.hasNext()) {
-                if (!i.next().booleanValue()) {
+            for (boolean crit : criteria.values()) {
+                if (!crit) {
                     forceSetVisible(false);
                     return;
                 }
