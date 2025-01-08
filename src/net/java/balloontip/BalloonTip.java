@@ -582,7 +582,6 @@ public class BalloonTip extends JPanel {
      * Helper method to construct the right positioner given a particular orientation, attach location and offset
      */
     protected BalloonTipPositioner setupPositioner(Orientation orientation, AttachLocation attachLocation, int horizontalOffset, int verticalOffset) {
-        BasicBalloonTipPositioner positioner = null;
         float attachX = 0.0f;
         float attachY = 0.0f;
         boolean fixedAttachLocation = true;
@@ -623,6 +622,7 @@ public class BalloonTip extends JPanel {
             break;
         }
 
+        BasicBalloonTipPositioner positioner = null;
         switch (orientation) {
         case LEFT_ABOVE:
             positioner = new LeftAbovePositioner(horizontalOffset, verticalOffset);
