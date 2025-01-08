@@ -50,13 +50,6 @@ public final class ToolTipUtils {
          */
         ToolTipController(BalloonTip balloonTip, int initialDelay, int showDelay) {
             this.balloonTip = balloonTip;
-            initialTimer = new Timer(initialDelay, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    balloonTip.setVisible(true);
-                    showTimer.start();
-                }
-            });
-            initialTimer.setRepeats(false);
 
             showTimer = new Timer(showDelay, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -64,6 +57,14 @@ public final class ToolTipUtils {
                 }
             });
             showTimer.setRepeats(false);
+
+            initialTimer = new Timer(initialDelay, new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    balloonTip.setVisible(true);
+                    showTimer.start();
+                }
+            });
+            initialTimer.setRepeats(false);
         }
 
         public void mouseEntered(MouseEvent e) {
