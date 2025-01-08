@@ -48,7 +48,7 @@ public final class ToolTipUtils {
          * @param initialDelay    in milliseconds, how long should you hover over the attached component before showing the tooltip
          * @param showDelay        in milliseconds, how long should the tooltip stay visible
          */
-        public ToolTipController(BalloonTip balloonTip, int initialDelay, int showDelay) {
+        ToolTipController(BalloonTip balloonTip, int initialDelay, int showDelay) {
             this.balloonTip = balloonTip;
             initialTimer = new Timer(initialDelay, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
