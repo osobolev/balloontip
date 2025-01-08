@@ -28,174 +28,174 @@ import java.awt.geom.GeneralPath;
  */
 public class ModernBalloonStyle extends BalloonTipStyle {
 
-	private final int arcWidth;
-	private final int arcHeight;
+    private final int arcWidth;
+    private final int arcHeight;
 
-	private boolean topLeft = true;
-	private boolean topRight = false;
-	private boolean bottomLeft = false;
-	private boolean bottomRight = true;
+    private boolean topLeft = true;
+    private boolean topRight = false;
+    private boolean bottomLeft = false;
+    private boolean bottomRight = true;
 
-	private int borderThickness = 1;
-	private boolean AAenabled = false;
+    private int borderThickness = 1;
+    private boolean AAenabled = false;
 
-	private final Color topFillColor;
-	private final Color bottomFillColor;
-	private final Color borderColor;
+    private final Color topFillColor;
+    private final Color bottomFillColor;
+    private final Color borderColor;
 
-	/**
-	 * Constructor
-	 * @param arcWidth			width of the rounded corner
-	 * @param arcHeight			height of the rounded color
-	 * @param borderColor		line color
-	 * @param topFillColor		top color of the lineair gradient fill color
-	 * @param bottomFillColor	bottom color of the lineair gradient fill color
-	 */
-	public ModernBalloonStyle(int arcWidth, int arcHeight, Color topFillColor, Color bottomFillColor, Color borderColor) {
-		super();
-		this.arcWidth = arcWidth;
-		this.arcHeight = arcHeight;
-		this.topFillColor = topFillColor;
-		this.bottomFillColor = bottomFillColor;
-		this.borderColor = borderColor;
-	}
+    /**
+     * Constructor
+     * @param arcWidth            width of the rounded corner
+     * @param arcHeight            height of the rounded color
+     * @param borderColor        line color
+     * @param topFillColor        top color of the lineair gradient fill color
+     * @param bottomFillColor    bottom color of the lineair gradient fill color
+     */
+    public ModernBalloonStyle(int arcWidth, int arcHeight, Color topFillColor, Color bottomFillColor, Color borderColor) {
+        super();
+        this.arcWidth = arcWidth;
+        this.arcHeight = arcHeight;
+        this.topFillColor = topFillColor;
+        this.bottomFillColor = bottomFillColor;
+        this.borderColor = borderColor;
+    }
 
-	/**
-	 * Sets the style for each corner.
-	 * If true, this corner will be rounded; if false, it's just a regular corner
-	 * @param topLeft		if true, the top-left corner is rounded
-	 * @param topRight		if true, the top-right corner is rounded
-	 * @param bottomLeft	if true, the bottom-left corner is rounded
-	 * @param bottomRight	if true, the bottom-right corner is rounded
-	 */
-	public void setCornerStyles(boolean topLeft, boolean topRight, boolean bottomLeft, boolean bottomRight) {
-		this.topLeft = topLeft;
-		this.topRight = topRight;
-		this.bottomLeft = bottomLeft;
-		this.bottomRight = bottomRight;
-	}
+    /**
+     * Sets the style for each corner.
+     * If true, this corner will be rounded; if false, it's just a regular corner
+     * @param topLeft        if true, the top-left corner is rounded
+     * @param topRight        if true, the top-right corner is rounded
+     * @param bottomLeft    if true, the bottom-left corner is rounded
+     * @param bottomRight    if true, the bottom-right corner is rounded
+     */
+    public void setCornerStyles(boolean topLeft, boolean topRight, boolean bottomLeft, boolean bottomRight) {
+        this.topLeft = topLeft;
+        this.topRight = topRight;
+        this.bottomLeft = bottomLeft;
+        this.bottomRight = bottomRight;
+    }
 
-	/**
-	 * Set the thickness of the balloon tip's border
-	 * @param thickness		border thickness in pixels
-	 */
-	public void setBorderThickness(int thickness) {
-		borderThickness = thickness;
-	}
+    /**
+     * Set the thickness of the balloon tip's border
+     * @param thickness        border thickness in pixels
+     */
+    public void setBorderThickness(int thickness) {
+        borderThickness = thickness;
+    }
 
-	/**
-	 * Enable/disable anti-aliasing for this balloon tip
-	 * @param enable	if true, AA is enabled; if false, the settings remain untouched
-	 */
-	public void enableAntiAliasing(boolean enable) {
-		AAenabled = enable;
-	}
+    /**
+     * Enable/disable anti-aliasing for this balloon tip
+     * @param enable    if true, AA is enabled; if false, the settings remain untouched
+     */
+    public void enableAntiAliasing(boolean enable) {
+        AAenabled = enable;
+    }
 
-	public Insets getBorderInsets(Component c) {
-		if (flipY) {
-			return new Insets(verticalOffset+arcHeight, arcWidth, arcHeight, arcWidth);
-		}
-		return new Insets(arcHeight, arcWidth, arcHeight+verticalOffset, arcWidth);
-	}
+    public Insets getBorderInsets(Component c) {
+        if (flipY) {
+            return new Insets(verticalOffset+arcHeight, arcWidth, arcHeight, arcWidth);
+        }
+        return new Insets(arcHeight, arcWidth, arcHeight+verticalOffset, arcWidth);
+    }
 
-	public boolean isBorderOpaque() {
-		return true;
-	}
+    public boolean isBorderOpaque() {
+        return true;
+    }
 
-	public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-		Graphics2D g2d = (Graphics2D) g;
-		if (AAenabled) {
-			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-					RenderingHints.VALUE_ANTIALIAS_ON);
-		}
+    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+        Graphics2D g2d = (Graphics2D) g;
+        if (AAenabled) {
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                    RenderingHints.VALUE_ANTIALIAS_ON);
+        }
 
-		// Make room for the border line
-		x+=borderThickness - 1;
-		y+=borderThickness - 1;
-		width-=borderThickness*2;
-		height-=borderThickness*2;
+        // Make room for the border line
+        x+=borderThickness - 1;
+        y+=borderThickness - 1;
+        width-=borderThickness*2;
+        height-=borderThickness*2;
 
-		int yTop;		// Y-coordinate of the top side of the balloon
-		int yBottom;	// Y-coordinate of the bottom side of the balloon
-		if (flipY) {
-			yTop = y + verticalOffset;
-			yBottom = y + height;
-		} else {
-			yTop = y;
-			yBottom = y + height - verticalOffset;
-		}
+        int yTop;        // Y-coordinate of the top side of the balloon
+        int yBottom;    // Y-coordinate of the bottom side of the balloon
+        if (flipY) {
+            yTop = y + verticalOffset;
+            yBottom = y + height;
+        } else {
+            yTop = y;
+            yBottom = y + height - verticalOffset;
+        }
 
-		// Draw the outline of the balloon
-		GeneralPath outline = new GeneralPath();
-		outline.moveTo(x + arcWidth, yTop);
+        // Draw the outline of the balloon
+        GeneralPath outline = new GeneralPath();
+        outline.moveTo(x + arcWidth, yTop);
 
-		if (topLeft) {
-			outline.quadTo(x, yTop, x, yTop + arcHeight);
-		} else {
-			outline.lineTo(x, yTop);
-			outline.lineTo(x, yTop + arcHeight);
-		}
+        if (topLeft) {
+            outline.quadTo(x, yTop, x, yTop + arcHeight);
+        } else {
+            outline.lineTo(x, yTop);
+            outline.lineTo(x, yTop + arcHeight);
+        }
 
-		outline.lineTo(x, yBottom - arcHeight);
+        outline.lineTo(x, yBottom - arcHeight);
 
-		if (bottomLeft) {
-			outline.quadTo(x, yBottom, x + arcWidth, yBottom);
-		} else {
-			outline.lineTo(x, yBottom);
-			outline.lineTo(x + arcWidth, yBottom);
-		}
+        if (bottomLeft) {
+            outline.quadTo(x, yBottom, x + arcWidth, yBottom);
+        } else {
+            outline.lineTo(x, yBottom);
+            outline.lineTo(x + arcWidth, yBottom);
+        }
 
-		if (!flipX && !flipY) {
-			outline.lineTo(x + horizontalOffset, yBottom);
-			outline.lineTo(x + horizontalOffset, yBottom + verticalOffset);
-			outline.lineTo(x + horizontalOffset + verticalOffset, yBottom);
-		} else if (flipX && !flipY) {
-			outline.lineTo(x + width - horizontalOffset - verticalOffset, yBottom);
-			outline.lineTo(x + width - horizontalOffset, yBottom + verticalOffset);
-			outline.lineTo(x + width - horizontalOffset, yBottom);
-		}
+        if (!flipX && !flipY) {
+            outline.lineTo(x + horizontalOffset, yBottom);
+            outline.lineTo(x + horizontalOffset, yBottom + verticalOffset);
+            outline.lineTo(x + horizontalOffset + verticalOffset, yBottom);
+        } else if (flipX && !flipY) {
+            outline.lineTo(x + width - horizontalOffset - verticalOffset, yBottom);
+            outline.lineTo(x + width - horizontalOffset, yBottom + verticalOffset);
+            outline.lineTo(x + width - horizontalOffset, yBottom);
+        }
 
-		outline.lineTo(x + width - arcWidth, yBottom);
+        outline.lineTo(x + width - arcWidth, yBottom);
 
-		if (bottomRight) {
-			outline.quadTo(x + width, yBottom, x + width, yBottom - arcHeight);
-		} else {
-			outline.lineTo(x + width, yBottom);
-			outline.lineTo(x + width, yBottom - arcHeight);
-		}
+        if (bottomRight) {
+            outline.quadTo(x + width, yBottom, x + width, yBottom - arcHeight);
+        } else {
+            outline.lineTo(x + width, yBottom);
+            outline.lineTo(x + width, yBottom - arcHeight);
+        }
 
-		outline.lineTo(x + width, yTop + arcHeight);
+        outline.lineTo(x + width, yTop + arcHeight);
 
-		if (topRight) {
-			outline.quadTo(x + width, yTop, x + width - arcWidth, yTop);
-		} else {
-			outline.lineTo(x + width, yTop);
-			outline.lineTo(x + width - arcWidth, yTop);
-		}
+        if (topRight) {
+            outline.quadTo(x + width, yTop, x + width - arcWidth, yTop);
+        } else {
+            outline.lineTo(x + width, yTop);
+            outline.lineTo(x + width - arcWidth, yTop);
+        }
 
-		if (!flipX && flipY) {
-			outline.lineTo(x + horizontalOffset + verticalOffset, yTop);
-			outline.lineTo(x + horizontalOffset, yTop - verticalOffset);
-			outline.lineTo(x + horizontalOffset, yTop);	
-		} else if (flipX && flipY) {
-			outline.lineTo(x + width - horizontalOffset, yTop);
-			outline.lineTo(x + width - horizontalOffset, yTop - verticalOffset);
-			outline.lineTo(x + width - horizontalOffset - verticalOffset, yTop);
-		}
+        if (!flipX && flipY) {
+            outline.lineTo(x + horizontalOffset + verticalOffset, yTop);
+            outline.lineTo(x + horizontalOffset, yTop - verticalOffset);
+            outline.lineTo(x + horizontalOffset, yTop);    
+        } else if (flipX && flipY) {
+            outline.lineTo(x + width - horizontalOffset, yTop);
+            outline.lineTo(x + width - horizontalOffset, yTop - verticalOffset);
+            outline.lineTo(x + width - horizontalOffset - verticalOffset, yTop);
+        }
 
-		outline.closePath();
+        outline.closePath();
 
-		// Now paint the sucker :)
-		g2d.setPaint(new GradientPaint(0, yTop,topFillColor, 0, yBottom, bottomFillColor));
-		g2d.fill(outline);
-		g2d.setPaint(borderColor);
-		Stroke backup = g2d.getStroke();
-		g2d.setStroke(new BasicStroke(borderThickness));
-		g2d.draw(outline);
-		g2d.setStroke(backup);
-	}
+        // Now paint the sucker :)
+        g2d.setPaint(new GradientPaint(0, yTop,topFillColor, 0, yBottom, bottomFillColor));
+        g2d.fill(outline);
+        g2d.setPaint(borderColor);
+        Stroke backup = g2d.getStroke();
+        g2d.setStroke(new BasicStroke(borderThickness));
+        g2d.draw(outline);
+        g2d.setStroke(backup);
+    }
 
-	public int getMinimalHorizontalOffset() {
-		return arcWidth + verticalOffset + borderThickness;
-	}
+    public int getMinimalHorizontalOffset() {
+        return arcWidth + verticalOffset + borderThickness;
+    }
 }

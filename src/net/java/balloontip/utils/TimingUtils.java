@@ -22,35 +22,35 @@ import net.java.balloontip.BalloonTip;
  */
 public final class TimingUtils {
 
-	/*
-	 * Disallow instantiating this class
-	 */
-	private TimingUtils() {}
+    /*
+     * Disallow instantiating this class
+     */
+    private TimingUtils() {}
 
-	/**
-	 * Displays a balloon tip for a certain time, then close it.
-	 * (Note that you cannot reuse this balloon tip after it has been closed.)
-	 * @param balloon			the BalloonTip
-	 * @param time				show the balloon for this amount of milliseconds
-	 */
-	public static void showTimedBalloon(final BalloonTip balloon, int time) {
-		showTimedBalloon(balloon, time,new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				balloon.closeBalloon();
-			}
-		});
-	}
+    /**
+     * Displays a balloon tip for a certain time, then close it.
+     * (Note that you cannot reuse this balloon tip after it has been closed.)
+     * @param balloon            the BalloonTip
+     * @param time                show the balloon for this amount of milliseconds
+     */
+    public static void showTimedBalloon(final BalloonTip balloon, int time) {
+        showTimedBalloon(balloon, time,new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                balloon.closeBalloon();
+            }
+        });
+    }
 
-	/**
-	 * Displays a balloon tip for a certain time
-	 * @param balloon			the BalloonTip
-	 * @param time				show the balloon for this amount of milliseconds
-	 * @param onTimeout			this action is taken when time runs out
-	 */
-	public static void showTimedBalloon(final BalloonTip balloon, int time, ActionListener onTimeout) {
-		balloon.setVisible(true);
-		Timer timer = new Timer(time, onTimeout);
-		timer.setRepeats(false);
-		timer.start();
-	}
+    /**
+     * Displays a balloon tip for a certain time
+     * @param balloon            the BalloonTip
+     * @param time                show the balloon for this amount of milliseconds
+     * @param onTimeout            this action is taken when time runs out
+     */
+    public static void showTimedBalloon(final BalloonTip balloon, int time, ActionListener onTimeout) {
+        balloon.setVisible(true);
+        Timer timer = new Timer(time, onTimeout);
+        timer.setRepeats(false);
+        timer.start();
+    }
 }

@@ -21,50 +21,50 @@ import java.awt.Insets;
  * @author Tim Molderez
  */
 public class ToolTipBalloonStyle extends BalloonTipStyle {
-	private final Color borderColor;
-	private final Color fillColor;
+    private final Color borderColor;
+    private final Color fillColor;
 
-	/**
-	 * Constructor
-	 * @param borderColor	border line color
-	 * @param fillColor		fill color
-	 */
-	public ToolTipBalloonStyle(Color fillColor, Color borderColor) {
-		super();
-		this.borderColor = borderColor;
-		this.fillColor = fillColor;
-	}
-	
-	public Insets getBorderInsets(Component c) {
-		if (flipY) {
-			return new Insets(verticalOffset + 1, 1, 1, 1);
-		}
-		return new Insets(1, 1, verticalOffset + 1 , 1);
-	}
+    /**
+     * Constructor
+     * @param borderColor    border line color
+     * @param fillColor        fill color
+     */
+    public ToolTipBalloonStyle(Color fillColor, Color borderColor) {
+        super();
+        this.borderColor = borderColor;
+        this.fillColor = fillColor;
+    }
+    
+    public Insets getBorderInsets(Component c) {
+        if (flipY) {
+            return new Insets(verticalOffset + 1, 1, 1, 1);
+        }
+        return new Insets(1, 1, verticalOffset + 1 , 1);
+    }
 
-	public boolean isBorderOpaque() {
-		return true;
-	}
+    public boolean isBorderOpaque() {
+        return true;
+    }
 
-	public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-		Graphics2D g2d = (Graphics2D) g;
-		width-=1;
-		height-=1;
+    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+        Graphics2D g2d = (Graphics2D) g;
+        width-=1;
+        height-=1;
 
-		int yTop;		// Y-coordinate of the top side of the balloon
-		int yBottom;	// Y-coordinate of the bottom side of the balloon
-		if (flipY) {
-			yTop = y + verticalOffset;
-			yBottom = y + height;
-		} else {
-			yTop = y;
-			yBottom = y + height - verticalOffset;
-		}
+        int yTop;        // Y-coordinate of the top side of the balloon
+        int yBottom;    // Y-coordinate of the bottom side of the balloon
+        if (flipY) {
+            yTop = y + verticalOffset;
+            yBottom = y + height;
+        } else {
+            yTop = y;
+            yBottom = y + height - verticalOffset;
+        }
 
-		// Draw the outline of the balloon
-		g2d.setPaint(fillColor);
-		g2d.fillRect(x, yTop, width, yBottom);
-		g2d.setPaint(borderColor);
-		g2d.drawRect(x, yTop, width, yBottom);
-	}
+        // Draw the outline of the balloon
+        g2d.setPaint(fillColor);
+        g2d.fillRect(x, yTop, width, yBottom);
+        g2d.setPaint(borderColor);
+        g2d.drawRect(x, yTop, width, yBottom);
+    }
 }

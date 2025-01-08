@@ -16,53 +16,53 @@ import java.awt.Rectangle;
  * @author Tim Molderez
  */
 public class LeftBelowPositioner extends BasicBalloonTipPositioner {
-	public LeftBelowPositioner(int hO, int vO) {
-		super(hO, vO);
-	}
+    public LeftBelowPositioner(int hO, int vO) {
+        super(hO, vO);
+    }
 
-	protected void determineLocation(Rectangle attached) {
-		// First calculate the location, without applying any correction tricks
-		int balloonWidth = balloonTip.getPreferredSize().width;
-		int balloonHeight = balloonTip.getPreferredSize().height;
-		flipX = false;
-		flipY = true;
-		
-		hOffset = preferredHorizontalOffset;
-		if (fixedAttachLocation) {
-			x = (int) (attached.x + attached.width * attachLocationX) - hOffset;
-			y = (int) (attached.y + attached.height * attachLocationY);
-		} else {
-			x = attached.x;
-			y = attached.y + attached.height;
-		}
-		
-		// Apply orientation correction
-		if (orientationCorrection) {
-			// Check collision with the bottom of the window
-			if (y + balloonHeight > balloonTip.getTopLevelContainer().getHeight()) {
-				flipY = false;
-				if (fixedAttachLocation) {
-					y -= balloonHeight;
-				} else {
-					y = attached.y - balloonHeight;
-				} 
-			}
-			
-			// Check collision with the left side of the window
-			if (x < 0) {
-				flipX = true;
-				if (fixedAttachLocation) {
-					x -= balloonWidth - 2*hOffset;
-				} else {
-					x = attached.x + attached.width - balloonWidth;
-				}
-				hOffset = balloonWidth - hOffset;
-			}
-		}
-		
-		// Apply offset correction
-		if (offsetCorrection) {
-			applyOffsetCorrection();
-		}
-	}
+    protected void determineLocation(Rectangle attached) {
+        // First calculate the location, without applying any correction tricks
+        int balloonWidth = balloonTip.getPreferredSize().width;
+        int balloonHeight = balloonTip.getPreferredSize().height;
+        flipX = false;
+        flipY = true;
+        
+        hOffset = preferredHorizontalOffset;
+        if (fixedAttachLocation) {
+            x = (int) (attached.x + attached.width * attachLocationX) - hOffset;
+            y = (int) (attached.y + attached.height * attachLocationY);
+        } else {
+            x = attached.x;
+            y = attached.y + attached.height;
+        }
+        
+        // Apply orientation correction
+        if (orientationCorrection) {
+            // Check collision with the bottom of the window
+            if (y + balloonHeight > balloonTip.getTopLevelContainer().getHeight()) {
+                flipY = false;
+                if (fixedAttachLocation) {
+                    y -= balloonHeight;
+                } else {
+                    y = attached.y - balloonHeight;
+                } 
+            }
+            
+            // Check collision with the left side of the window
+            if (x < 0) {
+                flipX = true;
+                if (fixedAttachLocation) {
+                    x -= balloonWidth - 2*hOffset;
+                } else {
+                    x = attached.x + attached.width - balloonWidth;
+                }
+                hOffset = balloonWidth - hOffset;
+            }
+        }
+        
+        // Apply offset correction
+        if (offsetCorrection) {
+            applyOffsetCorrection();
+        }
+    }
 }
