@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import java.awt.geom.GeneralPath;
  * @author Tim Molderez
  */
 public class MinimalBalloonStyle extends BalloonTipStyle {
+
     private final int arcWidth;
     private final Color fillColor;
 

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import net.java.balloontip.styles.BalloonTipStyle;
  * @author Tim Molderez
  */
 public class TableCellBalloonTip extends CustomBalloonTip {
+
     protected int row;
     protected int column;
 
@@ -54,6 +55,7 @@ public class TableCellBalloonTip extends CustomBalloonTip {
                 setCellPosition(row, column+1);
             }
         }
+
         public void columnRemoved(TableColumnModelEvent e) {
             if (e.getFromIndex() == column) {
                 closeBalloon();
@@ -63,9 +65,11 @@ public class TableCellBalloonTip extends CustomBalloonTip {
                 setCellPosition(row, column);
             }
         }
-        public void columnSelectionChanged(ListSelectionEvent e) {}
+
+        public void columnSelectionChanged(ListSelectionEvent e) {
+        }
     };
-    
+
     /**
      * @see net.java.balloontip.BalloonTip#BalloonTip(JComponent, JComponent, BalloonTipStyle, Orientation, AttachLocation, int, int, boolean)
      * @param table        the table to attach the balloon tip to (may not be null)

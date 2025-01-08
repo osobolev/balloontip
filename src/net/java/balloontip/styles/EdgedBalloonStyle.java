@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -16,13 +16,13 @@ import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.geom.GeneralPath;
 
-
 /**
  * A simple rectangular balloon tip style with a one pixel border
  * @author Bernhard Pauler
  * @author Tim Molderez
  */
 public class EdgedBalloonStyle extends BalloonTipStyle {
+
     private final Color borderColor;
     private final Color fillColor;
 
@@ -36,7 +36,7 @@ public class EdgedBalloonStyle extends BalloonTipStyle {
         this.borderColor = borderColor;
         this.fillColor = fillColor;
     }
-    
+
     public Insets getBorderInsets(Component c) {
         if (flipY) {
             return new Insets(verticalOffset + 1, 1, 1, 1);

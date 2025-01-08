@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -48,7 +48,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
         preferredHorizontalOffset = hO;
         preferredVerticalOffset = vO;
     }
-    
+
     protected void onStyleChange() {
         balloonTip.getStyle().setHorizontalOffset(preferredHorizontalOffset);
         balloonTip.getStyle().setVerticalOffset(preferredVerticalOffset);
@@ -57,7 +57,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
 
     /**
      * Retrieve the preferred horizontal offset (in pixels)
-     * @return         preferred horizontal offset (in pixels)
+     * @return preferred horizontal offset (in pixels)
      */
     public int getPreferredHorizontalOffset() {
         return preferredHorizontalOffset;
@@ -75,7 +75,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
 
     /**
      * Retrieve the preferred vertical offset
-     * @return        preferred vertical offset (in pixels)
+     * @return preferred vertical offset (in pixels)
      */
     public int getPreferredVerticalOffset() {
         return preferredVerticalOffset;
@@ -93,7 +93,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
 
     /**
      * Is offset correction enabled?
-     * @return        true if offset correction is enabled
+     * @return true if offset correction is enabled
      */
     public boolean isOffsetCorrected() {
         return offsetCorrection;
@@ -109,7 +109,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
 
     /**
      * Is orientation correction enabled?
-     * @return        true if orientation correction is enabled
+     * @return true if orientation correction is enabled
      */
     public boolean isOrientationCorrected() {
         return orientationCorrection;
@@ -125,7 +125,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
 
     /**
      * Does the tip have a fixed location?
-     * @return        true if the balloon has a fixed attaching location
+     * @return true if the balloon has a fixed attaching location
      */
     public boolean isFixedAttachLocation() {
         return fixedAttachLocation;
@@ -142,7 +142,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
     /**
      * Returns the percentage that determines the X-coordinate of the tip within the attached component
      * (whereas 0.0 is the left side and 1.0 is the right side)
-     * @return        the percentage that determines the X-coordinate of the attaching location
+     * @return the percentage that determines the X-coordinate of the attaching location
      */
     public float getAttachLocationX() {
         return attachLocationX;
@@ -151,7 +151,7 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
     /**
      * Returns the percentage that determines the Y-coordinate of the tip within the attached component
      * (whereas 0.0 is the top and 1.0 is the bottom)
-     * @return        the percentage that determines the Y-coordinate of the attaching location
+     * @return the percentage that determines the Y-coordinate of the attaching location
      */
     public float getAttachLocationY() {
         return attachLocationY;
@@ -218,27 +218,27 @@ public abstract class BasicBalloonTipPositioner extends BalloonTipPositioner {
                     x += overflow -  (balloonWidth - preferredHorizontalOffset) + minimumHorizontalOffset;
                 }
             }
-        }        
+        }
     }
-    
+
     public void determineAndSetLocation(Rectangle attached) {
         determineLocation(attached);
-        
+
         if (flipX) {
             balloonTip.getStyle().setHorizontalOffset(balloonTip.getPreferredSize().width - hOffset);
         } else {
             balloonTip.getStyle().setHorizontalOffset(hOffset);
         }
-        
+
         balloonTip.getStyle().flip(flipX, flipY);
         balloonTip.setBounds(x, y, balloonTip.getPreferredSize().width, balloonTip.getPreferredSize().height);
-        
+
         balloonTip.revalidate(); // Revalidate is needed in case the balloon gets flipped; validate wouldn't do in that case.
         if (hOffset != preferredHorizontalOffset) {
             balloonTip.repaint(); // In certain cases, when the horizontal offset changes, it doesn't get redrawn properly without a repaint...
         }
     }
-    
+
     /*
      * Calculates the current position of the balloon tip, but does not apply it yet
      * @param attached        the balloon tip is attached to this rectangle

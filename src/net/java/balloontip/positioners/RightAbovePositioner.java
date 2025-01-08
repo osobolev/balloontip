@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ import java.awt.Rectangle;
  * @author Tim Molderez
  */
 public class RightAbovePositioner extends BasicBalloonTipPositioner {
+
     public RightAbovePositioner(int hO, int vO) {
         super(hO, vO);
     }
@@ -26,7 +27,7 @@ public class RightAbovePositioner extends BasicBalloonTipPositioner {
         int balloonHeight = balloonTip.getPreferredSize().height;
         flipX = true;
         flipY = false;
-        
+
         hOffset = balloonWidth - preferredHorizontalOffset;
         if (fixedAttachLocation) {
             x = (int) (attached.x + attached.width * attachLocationX) - hOffset;
@@ -44,9 +45,9 @@ public class RightAbovePositioner extends BasicBalloonTipPositioner {
                     y += balloonHeight;
                 } else {
                     y = attached.y + attached.height;
-                } 
+                }
             }
-            
+
             // Check collision with the right side of the window
             if (x + balloonWidth > balloonTip.getTopLevelContainer().getWidth()) {
                 flipX = false;
@@ -58,7 +59,7 @@ public class RightAbovePositioner extends BasicBalloonTipPositioner {
                 }
             }
         }
-        
+
         // Apply offset correction
         if (offsetCorrection) {
             applyOffsetCorrection();

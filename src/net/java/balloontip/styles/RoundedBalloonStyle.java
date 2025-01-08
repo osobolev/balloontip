@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class RoundedBalloonStyle extends BalloonTipStyle {
         this.fillColor = fillColor;
         this.borderColor = borderColor;
     }
-    
+
     public Insets getBorderInsets(Component c) {
         if (flipY) {
             return new Insets(verticalOffset+arcHeight, arcWidth, arcHeight, arcWidth);
@@ -69,7 +69,7 @@ public class RoundedBalloonStyle extends BalloonTipStyle {
             yTop = y;
             yBottom = y + height - verticalOffset;
         }
-        
+
         // Draw the outline of the balloon
         GeneralPath outline = new GeneralPath();
         outline.moveTo(x + arcWidth, yTop);

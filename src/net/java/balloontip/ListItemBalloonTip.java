@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -23,8 +23,9 @@ import net.java.balloontip.styles.BalloonTipStyle;
  * @author Tim Molderez
  */
 public class ListItemBalloonTip extends CustomBalloonTip {
+
     protected int index; // Index of the list item that this balloon tip is attached to
-    
+
     // If list data is added or removed, adjust the balloon tip
     private final ListDataListener dataListener = new ListDataListener() {
         public void intervalAdded(ListDataEvent e) {
@@ -52,7 +53,7 @@ public class ListItemBalloonTip extends CustomBalloonTip {
             setItemPosition(index); // Refreshes the item's position, in case it might've changed..
         }
     };
-    
+
     /**
      * @see net.java.balloontip.BalloonTip#BalloonTip(JComponent, JComponent, BalloonTipStyle, Orientation, AttachLocation, int, int, boolean)
      * @param list        the list to attach the balloon tip to (may not be null)
@@ -96,6 +97,6 @@ public class ListItemBalloonTip extends CustomBalloonTip {
         JList<?> list=((JList<?>)attachedComponent);
         list.getModel().addListDataListener(dataListener);
     }
-    
+
     private static final long serialVersionUID = -7270789090236631717L;
 }

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ public class CenteredPositioner extends BalloonTipPositioner {
 
     protected int x = 0;                            // Current position
     protected int y = 0;
-    
+
     protected boolean flipY = false;
     protected int preferredVerticalOffset;            // The preferred value of the vertical offset        
 
@@ -40,7 +40,7 @@ public class CenteredPositioner extends BalloonTipPositioner {
 
     /**
      * Retrieve the preferred vertical offset
-     * @return        preferred vertical offset (in pixels)
+     * @return preferred vertical offset (in pixels)
      */
     public int getPreferredVerticalOffset() {
         return preferredVerticalOffset;
@@ -57,7 +57,7 @@ public class CenteredPositioner extends BalloonTipPositioner {
 
     /**
      * Is orientation correction enabled?
-     * @return        true if orientation correction is enabled
+     * @return true if orientation correction is enabled
      */
     public boolean isOrientationCorrected() {
         return orientationCorrection;
@@ -73,7 +73,7 @@ public class CenteredPositioner extends BalloonTipPositioner {
 
     /**
      * Does the tip have a fixed location?
-     * @return        true if the balloon has a fixed attaching location
+     * @return true if the balloon has a fixed attaching location
      */
     public boolean isFixedAttachLocation() {
         return fixedAttachLocation;
@@ -90,7 +90,7 @@ public class CenteredPositioner extends BalloonTipPositioner {
     /**
      * Returns the percentage that determines the Y-coordinate of the tip within the attached component
      * (whereas 0.0 is the top and 1.0 is the bottom)
-     * @return        the percentage that determines the Y-coordinate of the attaching location
+     * @return the percentage that determines the Y-coordinate of the attaching location
      */
     public float getAttachLocationY() {
         return attachLocationY;
@@ -119,7 +119,7 @@ public class CenteredPositioner extends BalloonTipPositioner {
         balloonTip.setBounds(x, y, balloonTip.getPreferredSize().width, balloonTip.getPreferredSize().height);
         balloonTip.revalidate(); // Revalidate is needed in case the balloon gets flipped; validate wouldn't do in that case.
     }
-    
+
     /*
      * Calculates the current position of the balloon tip, but does not apply it yet
      * @param attached        the balloon tip is attached to this rectangle
@@ -128,19 +128,19 @@ public class CenteredPositioner extends BalloonTipPositioner {
         // First calculate the location, without applying any correction tricks
         int balloonWidth = balloonTip.getPreferredSize().width;
         int balloonHeight = balloonTip.getPreferredSize().height;
-        
+
         flipY = false;
-        
+
         int hOffset = balloonWidth / 2;
         float attachLocationX = 0.5f;
-        
+
         x = (int) (attached.x + attached.width * attachLocationX) - hOffset;
         if (fixedAttachLocation) {
             y = (int) (attached.y + attached.height * attachLocationY) - balloonHeight;
         } else {
             y = attached.y - balloonHeight;
         }
-        
+
         // Apply orientation correction
         if (orientationCorrection) {
             // Check collision with the top of the window
@@ -150,10 +150,10 @@ public class CenteredPositioner extends BalloonTipPositioner {
                     y += balloonHeight;
                 } else {
                     y = attached.y + attached.height;
-                } 
+                }
             }
         }
-        
+
         // Finally set the balloon tip's location
         balloonTip.getStyle().setHorizontalOffset(hOffset);
     }

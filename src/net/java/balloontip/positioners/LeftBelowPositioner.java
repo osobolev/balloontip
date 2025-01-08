@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ import java.awt.Rectangle;
  * @author Tim Molderez
  */
 public class LeftBelowPositioner extends BasicBalloonTipPositioner {
+
     public LeftBelowPositioner(int hO, int vO) {
         super(hO, vO);
     }
@@ -26,7 +27,7 @@ public class LeftBelowPositioner extends BasicBalloonTipPositioner {
         int balloonHeight = balloonTip.getPreferredSize().height;
         flipX = false;
         flipY = true;
-        
+
         hOffset = preferredHorizontalOffset;
         if (fixedAttachLocation) {
             x = (int) (attached.x + attached.width * attachLocationX) - hOffset;
@@ -35,7 +36,7 @@ public class LeftBelowPositioner extends BasicBalloonTipPositioner {
             x = attached.x;
             y = attached.y + attached.height;
         }
-        
+
         // Apply orientation correction
         if (orientationCorrection) {
             // Check collision with the bottom of the window
@@ -45,9 +46,9 @@ public class LeftBelowPositioner extends BasicBalloonTipPositioner {
                     y -= balloonHeight;
                 } else {
                     y = attached.y - balloonHeight;
-                } 
+                }
             }
-            
+
             // Check collision with the left side of the window
             if (x < 0) {
                 flipX = true;
@@ -59,7 +60,7 @@ public class LeftBelowPositioner extends BasicBalloonTipPositioner {
                 hOffset = balloonWidth - hOffset;
             }
         }
-        
+
         // Apply offset correction
         if (offsetCorrection) {
             applyOffsetCorrection();

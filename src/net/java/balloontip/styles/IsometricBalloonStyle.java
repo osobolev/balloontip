@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import java.awt.geom.GeneralPath;
  * @author Tim Molderez
  */
 public class IsometricBalloonStyle extends BalloonTipStyle {
+
     private final Color sideColor;
     private final Color frontColor;
     private int depth;
@@ -38,7 +39,7 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         this.frontColor = frontColor;
         this.depth = depth;
     }
-    
+
     public Insets getBorderInsets(Component c) {
         if (flipY) {
             return new Insets(verticalOffset+depth+1, 1, 1, depth+1);
@@ -64,7 +65,7 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
             yTop = y + depth;
             yBottom = y + height - verticalOffset;
         }
-        
+
         // Draw the top of the balloon
         GeneralPath top = new GeneralPath();
         top.moveTo(x, yTop);
@@ -74,7 +75,7 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         top.closePath();
         g2d.setPaint(sideColor);
         g2d.fill(top);
-        
+
         // Draw the side of the balloon
         GeneralPath side = new GeneralPath();
         side.moveTo(width, yTop);
@@ -84,7 +85,7 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
         side.closePath();
         g2d.setPaint(sideColor.darker());
         g2d.fill(side);
-        
+
         // Draw the tip's side
         if (flipX && !flipY) {
             GeneralPath tipSide = new GeneralPath();

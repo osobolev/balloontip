@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -25,7 +25,8 @@ public final class FadingUtils {
     /*
      * Disallow instantiating this class
      */
-    private FadingUtils() {}
+    private FadingUtils() {
+    }
 
     /**
      * Execute a fade-in effect on a balloon tip

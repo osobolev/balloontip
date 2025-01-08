@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -28,8 +28,9 @@ import net.java.balloontip.styles.BalloonTipStyle;
  * @author Tim Molderez
  */
 public class TreeNodeBalloonTip extends CustomBalloonTip {
+
     protected TreePath path; // Path to the tree node that our balloon tip is attached to
-    
+
     // Shows/hides the balloon tip when nodes are expanded/collapsed
     private TreeExpansionListener expansionListener = new TreeExpansionListener() {
         public void treeExpanded(TreeExpansionEvent e) {
@@ -38,7 +39,7 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
             }
             setTreePath(path);
         }
-        
+
         public void treeCollapsed(TreeExpansionEvent e) {
             if(!getTree().isVisible(path)) {
                 visibilityControl.setCriterionAndUpdate("treeExpansion", false);
@@ -47,13 +48,13 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
             }
         }
     };
-    
+
     // Adjusts the balloon tip when the tree is modified
     private TreeModelListener modelListener = new TreeModelListener() {
         public void treeStructureChanged(TreeModelEvent e) {
             setTreePath(path);
         }
-        
+
         public void treeNodesRemoved(TreeModelEvent e) {
             boolean closeBalloon = false;
             for (Object child : e.getChildren()) {
@@ -62,18 +63,18 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
                     closeBalloon = true;
                 }
             }
-            
+
             if (closeBalloon) {
                 closeBalloon();
             } else {
                 setTreePath(path);
             }
         }
-        
+
         public void treeNodesInserted(TreeModelEvent e) {
             setTreePath(path);
         }
-        
+
         public void treeNodesChanged(TreeModelEvent e) {
             setTreePath(path);
         }
@@ -127,12 +128,12 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
         if(!getTree().isVisible(path)) {
             visibilityControl.setCriterionAndUpdate("treePath", false);
         }
-        
+
         JTree tree = getTree();
         tree.addTreeExpansionListener(expansionListener);
         tree.getModel().addTreeModelListener(modelListener);
     }
-    
+
     /*
      * Retrieve the JTree the balloon tip is attached to
      * @return            the tree
@@ -140,6 +141,6 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
     private JTree getTree() {
         return ((JTree)attachedComponent);
     }
-    
+
     private static final long serialVersionUID = -7270789090236631717L;
 }

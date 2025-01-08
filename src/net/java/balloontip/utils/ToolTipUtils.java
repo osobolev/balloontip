@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -31,12 +31,14 @@ public final class ToolTipUtils {
     /*
      * Disallow instantiating this class
      */
-    private ToolTipUtils() {}
+    private ToolTipUtils() {
+    }
 
     /*
      * This class monitors when the balloon tooltip should be shown
      */
     private static class ToolTipController extends MouseAdapter implements MouseMotionListener {
+
         private final BalloonTip balloonTip;
         private final Timer initialTimer;
         private final Timer showTimer;
@@ -65,11 +67,11 @@ public final class ToolTipUtils {
             });
             showTimer.setRepeats(false);
         }
-        
+
         public void mouseEntered(MouseEvent e) {
             initialTimer.start();
         }
-        
+
         public void mouseMoved(MouseEvent e) {
             if(balloonTip instanceof CustomBalloonTip) {
                 // If the mouse is within the balloon tip's attached rectangle
@@ -88,12 +90,12 @@ public final class ToolTipUtils {
             stopTimers();
             balloonTip.setVisible(false);
         }
-        
+
         public void mousePressed(MouseEvent e) {
             stopTimers();
             balloonTip.setVisible(false);
         }
-        
+
         /*
          * Stops all timers related to this tool tip
          */
@@ -101,7 +103,6 @@ public final class ToolTipUtils {
             initialTimer.stop();
             showTimer.stop();
         }
-        
     }
 
     /**
@@ -119,7 +120,7 @@ public final class ToolTipUtils {
         bT.getAttachedComponent().addMouseListener(tTC);
         bT.getAttachedComponent().addMouseMotionListener(tTC);
     }
-    
+
     /**
      * Turns a balloon tooltip back into a regular balloon tip
      * @param bT            the balloon tip
@@ -139,7 +140,7 @@ public final class ToolTipUtils {
                 break;
             }
         }
-        
+
         bT.setVisible(true);
     }
 }

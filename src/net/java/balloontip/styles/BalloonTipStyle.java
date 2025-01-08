@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -19,11 +19,12 @@ import javax.swing.border.Border;
  * @author Tim Molderez
  */
 public abstract class BalloonTipStyle implements Border {
+
     protected int horizontalOffset = 0;
     protected int verticalOffset = 0;
     protected boolean flipX = false;
     protected boolean flipY = false;
-    
+
     /**
      * Sets a new value for the horizontal offset.
      * @param px    horizontal offset (in pixels)
@@ -31,7 +32,7 @@ public abstract class BalloonTipStyle implements Border {
     public void setHorizontalOffset(int px) {
         horizontalOffset = px;
     }
-    
+
     /**
      * Sets a new value for the vertical offset.
      * @param px    horizontal offset (in pixels)
@@ -39,16 +40,16 @@ public abstract class BalloonTipStyle implements Border {
     public void setVerticalOffset(int px) {
         verticalOffset = px;
     }
-    
+
     /**
      * Get the minimum value of the horizontal offset
      * (Also useful as a maximum; maximum horizontaloffset = balloon tip width - minimum horizontal offset)
-     * @return        minimul horizontal offset
+     * @return minimul horizontal offset
      */
     public int getMinimalHorizontalOffset() {
         return verticalOffset;
     }
-    
+
     /**
      * Flip around the vertical axis
      * @param flipX        if true, the balloon tip is flipped horizontally
@@ -56,7 +57,7 @@ public abstract class BalloonTipStyle implements Border {
     public void flipX(boolean flipX) {
         this.flipX = flipX;
     }
-    
+
     /**
      * Flip around the horizontal axis
      * @param flipY        if true, the balloon tip is flipped vertically
@@ -64,7 +65,7 @@ public abstract class BalloonTipStyle implements Border {
     public void flipY(boolean flipY) {
         this.flipY = flipY;
     }
-    
+
     /**
      * Which mirror effect should be applied to the balloon tip
      * @param flipX        if true, the balloon tip is flipped horizontally
@@ -74,18 +75,18 @@ public abstract class BalloonTipStyle implements Border {
         this.flipX = flipX;
         this.flipY = flipY;
     }
-    
+
     /**
      * Is this balloon tip opaque?
-     * @return        true if opaque, false if the border uses transparency
+     * @return true if opaque, false if the border uses transparency
      */
     public boolean isBorderOpaque() {
         return true;
     }
-    
+
     /**
      * Retrieve the balloon tip's border insets
-     * @return        the balloon tip's border insets
+     * @return the balloon tip's border insets
      */
     public abstract Insets getBorderInsets(Component c);
 }

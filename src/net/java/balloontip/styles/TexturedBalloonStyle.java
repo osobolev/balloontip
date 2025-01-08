@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class TexturedBalloonStyle extends BalloonTipStyle {
         bgBounds = new Rectangle(0,0, bg.getWidth(), bg.getHeight());
         this.borderColor = borderColor;
     }
-    
+
     public Insets getBorderInsets(Component c) {
         if (flipY) {
             return new Insets(verticalOffset+arcHeight, arcWidth, arcHeight, arcWidth);
@@ -84,7 +84,6 @@ public class TexturedBalloonStyle extends BalloonTipStyle {
         outline.quadTo(x, yTop, x, yTop + arcHeight);
         outline.lineTo(x, yBottom - arcHeight);
         outline.quadTo(x, yBottom, x + arcWidth, yBottom);
-
 
         if (!flipX && !flipY) {
             outline.lineTo(x + horizontalOffset, yBottom);

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011-2013 Bernhard Pauler, Tim Molderez.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the 3-Clause BSD License
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import net.java.balloontip.styles.BalloonTipStyle;
  * @author Tim Molderez
  */
 public class CustomBalloonTip extends BalloonTip {
+
     // A rectangular shape within the custom component; the balloon tip will attach to this rectangle
     private Rectangle offset = null;
 
@@ -65,7 +66,7 @@ public class CustomBalloonTip extends BalloonTip {
 
     /**
      * Get the offset within the attached component
-     * @return        the offset
+     * @return the offset
      */
     public Rectangle getOffset() {
         return offset;
@@ -75,6 +76,6 @@ public class CustomBalloonTip extends BalloonTip {
         Point location = SwingUtilities.convertPoint(attachedComponent, getLocation(), this);
         return new Rectangle(location.x + offset.x, location.y + offset.y, offset.width, offset.height);
     }
-    
+
     private static final long serialVersionUID = 2956673369456562797L;
 }
