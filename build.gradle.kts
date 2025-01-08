@@ -8,6 +8,7 @@ group = "io.github.osobolev"
 version = "1.2.5"
 
 (publishing.publications["mavenJava"] as MavenPublication).pom {
+    name.set("balloontip")
     description.set("Provides balloon tips for use in Java Swing applications")
     url.set("https://github.com/osobolev/balloontip")
     licenses {
