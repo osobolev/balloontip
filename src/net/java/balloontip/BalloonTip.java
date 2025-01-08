@@ -175,8 +175,8 @@ public class BalloonTip extends JPanel {
      * @param verticalOffset        vertical offset for the balloon's tip
      * @param useCloseButton        if true, the balloon tip gets a close button
      */
-    public BalloonTip(final JComponent attachedComponent, final JComponent contents, final BalloonTipStyle style, Orientation orientation, AttachLocation attachLocation,
-                      int horizontalOffset, int verticalOffset, final boolean useCloseButton) {
+    public BalloonTip(JComponent attachedComponent, JComponent contents, BalloonTipStyle style, Orientation orientation, AttachLocation attachLocation,
+                      int horizontalOffset, int verticalOffset, boolean useCloseButton) {
         super();
         setup(
             attachedComponent, contents, style,
@@ -650,7 +650,7 @@ public class BalloonTip extends JPanel {
     /*
      * Sets up a BalloonTip instance
      */
-    protected void setup(final JComponent attachedComponent, JComponent contents, BalloonTipStyle style, BalloonTipPositioner positioner, JButton closeButton) {
+    protected void setup(JComponent attachedComponent, JComponent contents, BalloonTipStyle style, BalloonTipPositioner positioner, JButton closeButton) {
         this.attachedComponent = attachedComponent;
         this.contents = contents;
         this.style = style;

@@ -33,7 +33,7 @@ public final class TimingUtils {
      * @param balloon            the BalloonTip
      * @param time                show the balloon for this amount of milliseconds
      */
-    public static void showTimedBalloon(final BalloonTip balloon, int time) {
+    public static void showTimedBalloon(BalloonTip balloon, int time) {
         showTimedBalloon(balloon, time, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 balloon.closeBalloon();
@@ -47,7 +47,7 @@ public final class TimingUtils {
      * @param time                show the balloon for this amount of milliseconds
      * @param onTimeout            this action is taken when time runs out
      */
-    public static void showTimedBalloon(final BalloonTip balloon, int time, ActionListener onTimeout) {
+    public static void showTimedBalloon(BalloonTip balloon, int time, ActionListener onTimeout) {
         balloon.setVisible(true);
         Timer timer = new Timer(time, onTimeout);
         timer.setRepeats(false);

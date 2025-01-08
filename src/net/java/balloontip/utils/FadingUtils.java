@@ -34,13 +34,13 @@ public final class FadingUtils {
      * @param time            the duration of the fade-in effect (in ms)
      * @param refreshRate    at how many frames-per-second should the effect run
      */
-    public static void fadeInBalloon(final BalloonTip balloon, final ActionListener onStop, final int time, final int refreshRate) {
+    public static void fadeInBalloon(BalloonTip balloon, ActionListener onStop, int time, int refreshRate) {
         balloon.setOpacity(0.0f);
         balloon.setVisible(true);
 
-        final int timeDelta = 1000 / refreshRate;
+        int timeDelta = 1000 / refreshRate;
         // Trigger this timer at the desired refresh rate and stop it once full opacity is reached.
-        final Timer timer = new Timer(timeDelta, new ActionListener() {
+        Timer timer = new Timer(timeDelta, new ActionListener() {
             int curTime = 0;
 
             public void actionPerformed(ActionEvent e) {
@@ -70,12 +70,12 @@ public final class FadingUtils {
      * @param time            the duration of the fade-out effect (in ms)
      * @param refreshRate    at how many frames-per-second should the effect run
      */
-    public static void fadeOutBalloon(final BalloonTip balloon, final ActionListener onStop, final int time, final int refreshRate) {
+    public static void fadeOutBalloon(BalloonTip balloon, ActionListener onStop, int time, int refreshRate) {
         balloon.setOpacity(0.9999999f);
         balloon.setVisible(true);
 
-        final int timeDelta = 1000 / refreshRate;
-        final Timer timer = new Timer(timeDelta, new ActionListener() {
+        int timeDelta = 1000 / refreshRate;
+        Timer timer = new Timer(timeDelta, new ActionListener() {
             int curTime = 0;
 
             public void actionPerformed(ActionEvent e) {

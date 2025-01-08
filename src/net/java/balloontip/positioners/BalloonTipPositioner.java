@@ -49,7 +49,7 @@ public abstract class BalloonTipPositioner {
      * A BalloonTip must call this method at the end of its construction (or when it's swapping for a new BalloonTipPositioner).
      * @param balloonTip    the balloon tip
      */
-    public final void setBalloonTip(final BalloonTip balloonTip) {
+    public final void setBalloonTip(BalloonTip balloonTip) {
         this.balloonTip = balloonTip;
         this.balloonTip.addPropertyChangeListener("style", styleListener);
         onStyleChange();

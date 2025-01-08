@@ -48,7 +48,7 @@ public final class ToolTipUtils {
          * @param initialDelay    in milliseconds, how long should you hover over the attached component before showing the tooltip
          * @param showDelay        in milliseconds, how long should the tooltip stay visible
          */
-        public ToolTipController(final BalloonTip balloonTip, int initialDelay, int showDelay) {
+        public ToolTipController(BalloonTip balloonTip, int initialDelay, int showDelay) {
             super();
             this.balloonTip = balloonTip;
             initialTimer = new Timer(initialDelay, new ActionListener() {
@@ -112,7 +112,7 @@ public final class ToolTipUtils {
      * @param initialDelay    in milliseconds, how long should you hover over the attached component before showing the tooltip
      * @param showDelay        in milliseconds, how long should the tooltip stay visible
      */
-    public static void balloonToToolTip(final BalloonTip bT, int initialDelay, int showDelay) {
+    public static void balloonToToolTip(BalloonTip bT, int initialDelay, int showDelay) {
         bT.setVisible(false);
         // Add tooltip behaviour
         ToolTipController tTC = new ToolTipController(bT, initialDelay, showDelay);
@@ -124,7 +124,7 @@ public final class ToolTipUtils {
      * Turns a balloon tooltip back into a regular balloon tip
      * @param bT            the balloon tip
      */
-    public static void toolTipToBalloon(final BalloonTip bT) {
+    public static void toolTipToBalloon(BalloonTip bT) {
         // Remove tooltip behaviour
         for (MouseListener m : bT.getAttachedComponent().getMouseListeners()) {
             if (m instanceof ToolTipController) {
