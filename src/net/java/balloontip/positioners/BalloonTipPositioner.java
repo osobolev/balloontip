@@ -13,7 +13,6 @@ import net.java.balloontip.BalloonTip;
 
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 /**

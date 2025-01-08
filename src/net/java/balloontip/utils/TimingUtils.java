@@ -12,7 +12,6 @@ package net.java.balloontip.utils;
 import net.java.balloontip.BalloonTip;
 
 import javax.swing.Timer;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
