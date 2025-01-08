@@ -1,3 +1,3 @@
-module io.github.osobolev.wincom {
+module io.github.osobolev.balloontip {
     requires transitive java.desktop;
 }
