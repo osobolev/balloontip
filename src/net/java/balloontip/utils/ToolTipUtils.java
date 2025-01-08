@@ -36,7 +36,7 @@ public final class ToolTipUtils {
     /*
      * This class monitors when the balloon tooltip should be shown
      */
-    private static class ToolTipController extends MouseAdapter implements MouseMotionListener {
+    private static class ToolTipController extends MouseAdapter {
 
         private final BalloonTip balloonTip;
         private final Timer initialTimer;
