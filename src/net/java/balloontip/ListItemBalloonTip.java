@@ -37,12 +37,12 @@ public class ListItemBalloonTip extends CustomBalloonTip {
         }
 
         public void intervalRemoved(ListDataEvent e) {
-            // If the balloon tip needs to move up
             if (e.getIndex1() < index) {
+                // If the balloon tip needs to move up
                 index -= e.getIndex1() - e.getIndex0() + 1;
                 setItemPosition(index);
-            // If the item with the balloon tip is removed
             } else if (index >= e.getIndex0() && index <= e.getIndex1()) {
+                // If the item with the balloon tip is removed
                 closeBalloon();
             } else {
                 setItemPosition(index);

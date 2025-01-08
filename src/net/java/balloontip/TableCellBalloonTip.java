@@ -40,19 +40,19 @@ public class TableCellBalloonTip extends CustomBalloonTip {
         }
         public void columnMarginChanged(ChangeEvent e) {setCellPosition(row, column);}
         public void columnMoved(TableColumnModelEvent e) {
-            // If the column with the balloon tip is being moved
             if (column == e.getFromIndex()) {
+                // If the column with the balloon tip is being moved
                 setCellPosition(row, e.getToIndex());
-            // If both source and target columns are before/after the column with the balloon tip
-            } else if ((e.getFromIndex() > column && e.getToIndex() > column)
-                    || (e.getFromIndex() < column && e.getToIndex() < column)) {
+            } else if ((e.getFromIndex() > column && e.getToIndex() > column) ||
+                       (e.getFromIndex() < column && e.getToIndex() < column)) {
+                // If both source and target columns are before/after the column with the balloon tip
                 setCellPosition(row, column);
-            // Moving a column before the balloon tip to a column after the balloon tip
-            } else if(e.getFromIndex() < column && e.getToIndex() >= column) {
-                setCellPosition(row, column-1);
-            // Moving a column after the balloon tip to a column before the balloon tip
-            } else if(e.getFromIndex() > column && e.getToIndex() <= column) {
-                setCellPosition(row, column+1);
+            } else if (e.getFromIndex() < column && e.getToIndex() >= column) {
+                // Moving a column before the balloon tip to a column after the balloon tip
+                setCellPosition(row, column - 1);
+            } else if (e.getFromIndex() > column && e.getToIndex() <= column) {
+                // Moving a column after the balloon tip to a column before the balloon tip
+                setCellPosition(row, column + 1);
             }
         }
 
