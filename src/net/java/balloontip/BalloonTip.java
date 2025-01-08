@@ -833,13 +833,13 @@ public class BalloonTip extends JPanel {
             Point tipLocation = positioner.getTipLocation();
 
             boolean isWithinViewport = false;
-            for (JViewport viewport:viewportListener.viewports) {
-                Rectangle view = new Rectangle(SwingUtilities.convertPoint(viewport, new Point(0,0), getTopLevelContainer()), viewport.getSize());
-                
-                if (tipLocation.y >= view.y-1 // -1 because we still want to allow balloons that are attached to the very top...
-                        && tipLocation.y <= (view.y + view.height)
-                        && (tipLocation.x) >= view.x
-                        && (tipLocation.x) <= (view.x + view.width)) {
+            for (JViewport viewport : viewportListener.viewports) {
+                Rectangle view = new Rectangle(SwingUtilities.convertPoint(viewport, new Point(0, 0), getTopLevelContainer()), viewport.getSize());
+
+                if (tipLocation.y >= view.y - 1 // -1 because we still want to allow balloons that are attached to the very top...
+                    && tipLocation.y <= (view.y + view.height)
+                    && (tipLocation.x) >= view.x
+                    && (tipLocation.x) <= (view.x + view.width)) {
                     isWithinViewport = true;
                 } else {
                     isWithinViewport = false;
