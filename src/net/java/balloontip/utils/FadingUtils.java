@@ -9,12 +9,11 @@
 
 package net.java.balloontip.utils;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import net.java.balloontip.BalloonTip;
 
 import javax.swing.Timer;
-
-import net.java.balloontip.BalloonTip;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * A utility class for adding simple linear fade-in/out effects to balloon tips

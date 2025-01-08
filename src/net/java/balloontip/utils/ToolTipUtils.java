@@ -9,17 +9,16 @@
 
 package net.java.balloontip.utils;
 
+import net.java.balloontip.BalloonTip;
+import net.java.balloontip.CustomBalloonTip;
+
+import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
-import javax.swing.Timer;
-
-import net.java.balloontip.BalloonTip;
-import net.java.balloontip.CustomBalloonTip;
 
 /**
  * This class allows you to use a balloon tip as a tooltip

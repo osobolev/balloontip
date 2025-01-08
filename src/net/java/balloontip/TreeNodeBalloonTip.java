@@ -9,7 +9,8 @@
 
 package net.java.balloontip;
 
-import java.awt.Rectangle;
+import net.java.balloontip.positioners.BalloonTipPositioner;
+import net.java.balloontip.styles.BalloonTipStyle;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -19,9 +20,7 @@ import javax.swing.event.TreeExpansionListener;
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreePath;
-
-import net.java.balloontip.positioners.BalloonTipPositioner;
-import net.java.balloontip.styles.BalloonTipStyle;
+import java.awt.Rectangle;
 
 /**
  * A balloon tip that can attach itself to a node in a JTree

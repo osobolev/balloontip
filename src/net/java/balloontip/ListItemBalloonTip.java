@@ -9,14 +9,14 @@
 
 package net.java.balloontip;
 
+import net.java.balloontip.positioners.BalloonTipPositioner;
+import net.java.balloontip.styles.BalloonTipStyle;
+
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JList;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
-
-import net.java.balloontip.positioners.BalloonTipPositioner;
-import net.java.balloontip.styles.BalloonTipStyle;
 
 /**
  * A balloon tip that can attach itself to an item in a JList

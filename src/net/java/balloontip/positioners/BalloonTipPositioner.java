@@ -9,12 +9,12 @@
 
 package net.java.balloontip.positioners;
 
+import net.java.balloontip.BalloonTip;
+
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-
-import net.java.balloontip.BalloonTip;
 
 /**
  * A BalloonTipPositioner is used to determine the position of a BalloonTip

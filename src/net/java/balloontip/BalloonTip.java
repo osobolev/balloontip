@@ -9,6 +9,30 @@
 
 package net.java.balloontip;
 
+import net.java.balloontip.positioners.BalloonTipPositioner;
+import net.java.balloontip.positioners.BasicBalloonTipPositioner;
+import net.java.balloontip.positioners.LeftAbovePositioner;
+import net.java.balloontip.positioners.LeftBelowPositioner;
+import net.java.balloontip.positioners.RightAbovePositioner;
+import net.java.balloontip.positioners.RightBelowPositioner;
+import net.java.balloontip.styles.BalloonTipStyle;
+import net.java.balloontip.styles.RoundedBalloonStyle;
+
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JViewport;
+import javax.swing.SwingUtilities;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.AlphaComposite;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -31,31 +55,6 @@ import java.awt.event.MouseListener;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
-
-import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.JViewport;
-import javax.swing.SwingUtilities;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
-import net.java.balloontip.positioners.BalloonTipPositioner;
-import net.java.balloontip.positioners.BasicBalloonTipPositioner;
-import net.java.balloontip.positioners.LeftAbovePositioner;
-import net.java.balloontip.positioners.LeftBelowPositioner;
-import net.java.balloontip.positioners.RightAbovePositioner;
-import net.java.balloontip.positioners.RightBelowPositioner;
-import net.java.balloontip.styles.BalloonTipStyle;
-import net.java.balloontip.styles.RoundedBalloonStyle;
 
 /**
  * A balloon tip Swing component that is attached to a JComponent and uses another JComponent as contents

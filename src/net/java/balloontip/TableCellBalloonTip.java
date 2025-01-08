@@ -9,6 +9,9 @@
 
 package net.java.balloontip;
 
+import net.java.balloontip.positioners.BalloonTipPositioner;
+import net.java.balloontip.styles.BalloonTipStyle;
+
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JTable;
@@ -16,9 +19,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.TableColumnModelEvent;
 import javax.swing.event.TableColumnModelListener;
-
-import net.java.balloontip.positioners.BalloonTipPositioner;
-import net.java.balloontip.styles.BalloonTipStyle;
 
 /**
  * Provides similar functionality as a CustomBalloonTip, but attaches itself to a cell in a JTable

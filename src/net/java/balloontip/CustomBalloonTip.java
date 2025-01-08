@@ -9,15 +9,14 @@
 
 package net.java.balloontip;
 
-import java.awt.Point;
-import java.awt.Rectangle;
+import net.java.balloontip.positioners.BalloonTipPositioner;
+import net.java.balloontip.styles.BalloonTipStyle;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
-
-import net.java.balloontip.positioners.BalloonTipPositioner;
-import net.java.balloontip.styles.BalloonTipStyle;
+import java.awt.Point;
+import java.awt.Rectangle;
 
 /**
  * Provides the same functionality as a BalloonTip, but you can add a certain offset to its position (, which can come in handy if attached to custom components)

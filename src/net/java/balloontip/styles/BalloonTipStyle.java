@@ -9,10 +9,9 @@
 
 package net.java.balloontip.styles;
 
+import javax.swing.border.Border;
 import java.awt.Component;
 import java.awt.Insets;
-
-import javax.swing.border.Border;
 
 /**
  * A balloon tip style defines what a balloon tip should look like
