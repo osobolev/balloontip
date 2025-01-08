@@ -32,7 +32,6 @@ public class MinimalBalloonStyle extends BalloonTipStyle {
      * @param arcWidth        the radius of a rounded corner
      */
     public MinimalBalloonStyle(Color fillColor, int arcWidth) {
-        super();
         this.fillColor = fillColor;
         this.arcWidth = arcWidth;
     }

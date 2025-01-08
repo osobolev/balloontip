@@ -32,7 +32,6 @@ public class EdgedBalloonStyle extends BalloonTipStyle {
      * @param fillColor        fill color
      */
     public EdgedBalloonStyle(Color fillColor, Color borderColor) {
-        super();
         this.borderColor = borderColor;
         this.fillColor = fillColor;
     }

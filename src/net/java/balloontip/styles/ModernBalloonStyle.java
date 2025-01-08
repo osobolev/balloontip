@@ -52,7 +52,6 @@ public class ModernBalloonStyle extends BalloonTipStyle {
      * @param bottomFillColor    bottom color of the lineair gradient fill color
      */
     public ModernBalloonStyle(int arcWidth, int arcHeight, Color topFillColor, Color bottomFillColor, Color borderColor) {
-        super();
         this.arcWidth = arcWidth;
         this.arcHeight = arcHeight;
         this.topFillColor = topFillColor;

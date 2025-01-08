@@ -34,7 +34,6 @@ public class CenteredPositioner extends BalloonTipPositioner {
      * @param vO    preferred vertical offset
      */
     public CenteredPositioner(int vO) {
-        super();
         preferredVerticalOffset = vO;
     }
 

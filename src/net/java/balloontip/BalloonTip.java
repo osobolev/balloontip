@@ -177,7 +177,6 @@ public class BalloonTip extends JPanel {
      */
     public BalloonTip(JComponent attachedComponent, JComponent contents, BalloonTipStyle style, Orientation orientation, AttachLocation attachLocation,
                       int horizontalOffset, int verticalOffset, boolean useCloseButton) {
-        super();
         setup(
             attachedComponent, contents, style,
             setupPositioner(orientation, attachLocation, horizontalOffset, verticalOffset),
@@ -194,7 +193,6 @@ public class BalloonTip extends JPanel {
      * @param closeButton            the close button to be used for the balloon tip (may be null)
      */
     public BalloonTip(JComponent attachedComponent, JComponent contents, BalloonTipStyle style, BalloonTipPositioner positioner, JButton closeButton) {
-        super();
         setup(attachedComponent, contents, style, positioner, closeButton);
     }
 
@@ -578,7 +576,6 @@ public class BalloonTip extends JPanel {
      * Default constructor; does nothing but call the super-constructor
      */
     protected BalloonTip() {
-        super();
     }
 
     /*

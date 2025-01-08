@@ -49,7 +49,6 @@ public final class ToolTipUtils {
          * @param showDelay        in milliseconds, how long should the tooltip stay visible
          */
         public ToolTipController(BalloonTip balloonTip, int initialDelay, int showDelay) {
-            super();
             this.balloonTip = balloonTip;
             initialTimer = new Timer(initialDelay, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {

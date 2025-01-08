@@ -37,7 +37,6 @@ public class RoundedBalloonStyle extends BalloonTipStyle {
      * @param borderColor    border line color
      */
     public RoundedBalloonStyle(int arcWidth, int arcHeight, Color fillColor, Color borderColor) {
-        super();
         this.arcWidth = arcWidth;
         this.arcHeight = arcHeight;
         this.fillColor = fillColor;

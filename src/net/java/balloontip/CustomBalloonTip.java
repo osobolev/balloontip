@@ -34,7 +34,6 @@ public class CustomBalloonTip extends BalloonTip {
      *                             Do note that the coordinates should be relative to the attached component's top left corner.
      */
     public CustomBalloonTip(JComponent attachedComponent, JComponent component, Rectangle offset, BalloonTipStyle style, Orientation orientation, AttachLocation attachLocation, int horizontalOffset, int verticalOffset, boolean useCloseButton) {
-        super();
         this.offset = offset;
         setup(
             attachedComponent, component, style,
@@ -50,7 +49,6 @@ public class CustomBalloonTip extends BalloonTip {
      *                             Do note that the coordinates should be relative to the attached component's top left corner.
      */
     public CustomBalloonTip(JComponent attachedComponent, JComponent component, Rectangle offset, BalloonTipStyle style, BalloonTipPositioner positioner, JButton closeButton) {
-        super();
         this.offset = offset;
         setup(attachedComponent, component, style, positioner, closeButton);
     }

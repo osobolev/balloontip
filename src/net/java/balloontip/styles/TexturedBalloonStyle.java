@@ -43,7 +43,6 @@ public class TexturedBalloonStyle extends BalloonTipStyle {
      * @throws IOException    in case something went wrong when opening the background image
      */
     public TexturedBalloonStyle(int arcWidth, int arcHeight, URL background, Color borderColor) throws IOException {
-        super();
         this.arcWidth = arcWidth;
         this.arcHeight = arcHeight;
         this.bg = javax.imageio.ImageIO.read(background);

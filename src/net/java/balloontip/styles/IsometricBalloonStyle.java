@@ -34,7 +34,6 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
      * @param depth                depth of the balloon tip (in px)
      */
     public IsometricBalloonStyle(Color frontColor, Color sideColor, int depth) {
-        super();
         this.sideColor = sideColor;
         this.frontColor = frontColor;
         this.depth = depth;
