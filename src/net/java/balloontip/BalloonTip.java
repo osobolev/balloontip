@@ -513,7 +513,7 @@ public class BalloonTip extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
-        if (opacity != 1.0f) {
+        if (opacity < 1.0f) {
             ((Graphics2D) g).setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
         }
         super.paintComponent(g);
