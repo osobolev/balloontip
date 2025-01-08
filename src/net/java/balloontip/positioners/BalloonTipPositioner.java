@@ -24,7 +24,7 @@ import java.beans.PropertyChangeListener;
 public abstract class BalloonTipPositioner {
 
     protected BalloonTip balloonTip = null;
-    private PropertyChangeListener styleListener = new PropertyChangeListener() {
+    private final PropertyChangeListener styleListener = new PropertyChangeListener() {
         public void propertyChange(PropertyChangeEvent evt) {
             onStyleChange();
         }

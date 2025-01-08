@@ -31,7 +31,7 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
     protected TreePath path; // Path to the tree node that our balloon tip is attached to
 
     // Shows/hides the balloon tip when nodes are expanded/collapsed
-    private TreeExpansionListener expansionListener = new TreeExpansionListener() {
+    private final TreeExpansionListener expansionListener = new TreeExpansionListener() {
         public void treeExpanded(TreeExpansionEvent e) {
             if (getTree().isVisible(path)) {
                 visibilityControl.setCriterionAndUpdate("treeExpansion", true);
@@ -49,7 +49,7 @@ public class TreeNodeBalloonTip extends CustomBalloonTip {
     };
 
     // Adjusts the balloon tip when the tree is modified
-    private TreeModelListener modelListener = new TreeModelListener() {
+    private final TreeModelListener modelListener = new TreeModelListener() {
         public void treeStructureChanged(TreeModelEvent e) {
             setTreePath(path);
         }

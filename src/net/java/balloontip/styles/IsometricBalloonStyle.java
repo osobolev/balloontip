@@ -25,7 +25,7 @@ public class IsometricBalloonStyle extends BalloonTipStyle {
 
     private final Color sideColor;
     private final Color frontColor;
-    private int depth;
+    private final int depth;
 
     /**
      * Constructor
