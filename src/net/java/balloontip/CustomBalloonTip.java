@@ -25,7 +25,7 @@ import java.awt.Rectangle;
 public class CustomBalloonTip extends BalloonTip {
 
     // A rectangular shape within the custom component; the balloon tip will attach to this rectangle
-    private Rectangle offset = null;
+    private Rectangle offset;
 
     /**
      * @see net.java.balloontip.BalloonTip#BalloonTip(JComponent, JComponent, BalloonTipStyle, Orientation, AttachLocation, int, int, boolean)
