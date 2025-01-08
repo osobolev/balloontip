@@ -13,8 +13,8 @@ version = "1.2.5"
     url.set("https://github.com/osobolev/balloontip")
     licenses {
         license {
-            name.set("The Apache License, Version 2.0")
-            url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+            name.set("3-Clause BSD license")
+            url.set("http://www.opensource.org/licenses/BSD-3-Clause")
         }
     }
     developers {
