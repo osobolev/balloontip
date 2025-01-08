@@ -96,8 +96,10 @@ public class BalloonTip extends JPanel {
             /* We're assuming here that components can only resize when they are visible!
              * (If we would use isAttachedComponentShowing(), the JApplet test will fail.
              * Perhaps this indicates a bug in Component.isShowing() when using components in a JApplet..) */
-            visibilityControl.setCriterionAndUpdate("attachedComponentShowing",
-                    attachedComponent.getWidth() > 0 && attachedComponent.getHeight() > 0);
+            visibilityControl.setCriterionAndUpdate(
+                "attachedComponentShowing",
+                attachedComponent.getWidth() > 0 && attachedComponent.getHeight() > 0
+            );
             refreshLocation();
         }
 
@@ -175,10 +177,13 @@ public class BalloonTip extends JPanel {
      * @param useCloseButton        if true, the balloon tip gets a close button
      */
     public BalloonTip(final JComponent attachedComponent, final JComponent contents, final BalloonTipStyle style, Orientation orientation, AttachLocation attachLocation,
-            int horizontalOffset, int verticalOffset, final boolean useCloseButton) {
+                      int horizontalOffset, int verticalOffset, final boolean useCloseButton) {
         super();
-        setup(attachedComponent, contents, style, setupPositioner(orientation, attachLocation, horizontalOffset, verticalOffset),
-                useCloseButton?getDefaultCloseButton():null);
+        setup(
+            attachedComponent, contents, style,
+            setupPositioner(orientation, attachLocation, horizontalOffset, verticalOffset),
+            useCloseButton ? getDefaultCloseButton() : null
+        );
     }
 
     /**
