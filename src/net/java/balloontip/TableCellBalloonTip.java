@@ -38,7 +38,11 @@ public class TableCellBalloonTip extends CustomBalloonTip {
                 setCellPosition(row, column);
             }
         }
-        public void columnMarginChanged(ChangeEvent e) {setCellPosition(row, column);}
+
+        public void columnMarginChanged(ChangeEvent e) {
+            setCellPosition(row, column);
+        }
+
         public void columnMoved(TableColumnModelEvent e) {
             if (column == e.getFromIndex()) {
                 // If the column with the balloon tip is being moved

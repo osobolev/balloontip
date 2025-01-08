@@ -663,7 +663,9 @@ public class BalloonTip extends JPanel {
 
         // Don't allow to click 'through' the balloon tip
         clickListener = new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {e.consume();}
+            public void mouseClicked(MouseEvent e) {
+                e.consume();
+            }
         };
         addMouseListener(clickListener);
 
