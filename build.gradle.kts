@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.github.osobolev"
-version = "1.2.5"
+version = "1.2.5.1"
 
 (publishing.publications["mavenJava"] as MavenPublication).pom {
     name.set("balloontip")
