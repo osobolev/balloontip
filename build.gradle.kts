@@ -1,13 +1,28 @@
+import com.vanniktech.maven.publish.JavaLibrary
+import com.vanniktech.maven.publish.JavadocJar
+
 description = "Java Swing balloon tips"
 
 plugins {
+    id("com.vanniktech.maven.publish") version "0.35.0"
     `module-lib`
 }
 
 group = "io.github.osobolev"
 version = "1.2.5.1"
 
-(publishing.publications["mavenJava"] as MavenPublication).pom {
+mavenPublishing {
+    publishToMavenCentral()
+    signAllPublications()
+
+    coordinates("${project.group}", "${project.name}", "${project.version}")
+    configure(JavaLibrary(
+        javadocJar = JavadocJar.Javadoc(),
+        sourcesJar = true
+    ))
+}
+
+mavenPublishing.pom {
     name.set("balloontip")
     description.set("Provides balloon tips for use in Java Swing applications")
     url.set("https://github.com/osobolev/balloontip")
