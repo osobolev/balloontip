@@ -4,7 +4,7 @@ import com.vanniktech.maven.publish.JavadocJar
 description = "Java Swing balloon tips"
 
 plugins {
-    id("com.vanniktech.maven.publish") version "0.35.0"
+    id("com.vanniktech.maven.publish") version "0.36.0"
     `module-lib`
 }
 
